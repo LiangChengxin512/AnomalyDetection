@@ -48,6 +48,19 @@ def import_experiment_utils(args):
 	}
 
 
+def parse_score_topk(value):
+	value = str(value).strip()
+	if value.lower() == 'auto':
+		return 'auto'
+	try:
+		topk = int(value)
+	except ValueError as exc:
+		raise argparse.ArgumentTypeError('--score-topk must be a positive integer or auto') from exc
+	if topk < 1:
+		raise argparse.ArgumentTypeError('--score-topk must be a positive integer or auto')
+	return topk
+
+
 def parse_args():
 	parser = argparse.ArgumentParser(
 		description='Render paper-style anomaly prediction and focus/attention figures from a checkpoint.'
@@ -61,7 +74,7 @@ def parse_args():
 	parser.add_argument('--output-dir', type=str, default='experiment_visualizations')
 	parser.add_argument('--less', action='store_true')
 	parser.add_argument('--score-agg', type=str, default='mean', choices=['mean', 'max', 'p95', 'topk'])
-	parser.add_argument('--score-topk', type=int, default=3)
+	parser.add_argument('--score-topk', type=parse_score_topk, default=3)
 	parser.add_argument('--start', type=int, default=None)
 	parser.add_argument('--length', type=int, default=400)
 	parser.add_argument('--max-dims', type=int, default=4)

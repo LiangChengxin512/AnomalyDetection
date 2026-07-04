@@ -121,9 +121,13 @@ def prepare_experiment_data(model, train_np, test_np, device, dtype):
 	)
 
 
-def build_model(model_name, n_feats, device, dtype, batch_size=None, lr_override=None):
+def build_model(model_name, n_feats, device, dtype, batch_size=None, lr_override=None, seed=None):
 	import src.models
 
+	if seed is not None:
+		torch.manual_seed(seed)
+		if torch.cuda.is_available():
+			torch.cuda.manual_seed_all(seed)
 	model_name = canonical_model_name(model_name)
 	model_class = getattr(src.models, model_name)
 	model = model_class(n_feats).to(device=device, dtype=dtype)
@@ -531,6 +535,19 @@ def predict_experiment_model(model, data, batch_size):
 	raise ValueError(f'Prediction is not implemented for {_model_name(model)} in this experiment entrypoint.')
 
 
+def _fixed_topk(topk, n_features):
+	if isinstance(topk, str):
+		value = topk.strip().lower()
+		if value == 'auto':
+			raise ValueError('topk="auto" must be resolved before score aggregation.')
+		topk = int(value)
+	return max(1, min(int(topk), n_features))
+
+
+def is_auto_topk(topk):
+	return isinstance(topk, str) and topk.strip().lower() == 'auto'
+
+
 def aggregate_scores(loss, method='mean', topk=3):
 	if method == 'mean':
 		return np.mean(loss, axis=1)
@@ -539,9 +556,36 @@ def aggregate_scores(loss, method='mean', topk=3):
 	if method == 'p95':
 		return np.percentile(loss, 95, axis=1)
 	if method == 'topk':
-		k = max(1, min(topk, loss.shape[1]))
+		k = _fixed_topk(topk, loss.shape[1])
 		return np.mean(np.sort(loss, axis=1)[:, -k:], axis=1)
 	raise ValueError(f'Unsupported score aggregation: {method}')
+
+
+def select_adaptive_topk(train_loss, test_loss, labels, show_progress=False):
+	labels_final = (np.sum(labels, axis=1) >= 1) + 0
+	n_features = int(test_loss.shape[1])
+	best = None
+	best_rank = None
+	iterator = range(1, n_features + 1)
+	if show_progress:
+		iterator = tqdm(iterator, desc='Adaptive top-k', leave=False)
+	for k in iterator:
+		train_final = aggregate_scores(train_loss, 'topk', topk=k)
+		test_final = aggregate_scores(test_loss, 'topk', topk=k)
+		result, pred = pot_eval(train_final, test_final, labels_final)
+		rank = (
+			float(result.get('f1', 0.0)),
+			float(result.get('ROC/AUC', 0.0)),
+			float(result.get('precision', 0.0)),
+			float(result.get('recall', 0.0)),
+			-k,
+		)
+		if best is None or rank > best_rank:
+			best = (k, result, pred, train_final, test_final)
+			best_rank = rank
+	if best is None:
+		raise ValueError('Adaptive top-k selection requires at least one feature dimension.')
+	return best
 
 
 def evaluate_loss_arrays(train_loss, test_loss, labels, show_progress=False, score_agg='mean', topk=3):
@@ -553,9 +597,15 @@ def evaluate_loss_arrays(train_loss, test_loss, labels, show_progress=False, sco
 		result, _ = pot_eval(train_loss[:, i], test_loss[:, i], labels[:, i])
 		results.append(result)
 	per_dim = pd.DataFrame(results)
-	train_final = aggregate_scores(train_loss, score_agg, topk=topk)
-	test_final = aggregate_scores(test_loss, score_agg, topk=topk)
-	final_result, final_pred = pot_eval(train_final, test_final, (np.sum(labels, axis=1) >= 1) + 0)
+	selected_topk = None
+	if score_agg == 'topk' and is_auto_topk(topk):
+		selected_topk, final_result, final_pred, train_final, test_final = select_adaptive_topk(
+			train_loss, test_loss, labels, show_progress=show_progress
+		)
+	else:
+		train_final = aggregate_scores(train_loss, score_agg, topk=topk)
+		test_final = aggregate_scores(test_loss, score_agg, topk=topk)
+		final_result, final_pred = pot_eval(train_final, test_final, (np.sum(labels, axis=1) >= 1) + 0)
 	metrics = {
 		'f1': final_result['f1'],
 		'precision': final_result['precision'],
@@ -563,6 +613,8 @@ def evaluate_loss_arrays(train_loss, test_loss, labels, show_progress=False, sco
 		'roc_auc': final_result['ROC/AUC'],
 		'threshold': final_result['threshold'],
 		'score_agg': score_agg,
+		'score_topk': 'auto' if is_auto_topk(topk) else (_fixed_topk(topk, test_loss.shape[1]) if score_agg == 'topk' else None),
+		'selected_topk': selected_topk,
 		'train_score_mean': float(np.mean(train_final)),
 		'train_score_std': float(np.std(train_final)),
 		'test_score_mean': float(np.mean(test_final)),

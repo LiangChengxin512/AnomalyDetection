@@ -1,5 +1,6 @@
 import argparse
 import os
+import random
 import sys
 from pathlib import Path
 
@@ -8,6 +9,7 @@ if str(PROJECT_ROOT) not in sys.path:
 	sys.path.insert(0, str(PROJECT_ROOT))
 
 import pandas as pd
+import numpy as np
 import torch
 
 from src.device import get_best_device, get_dtype_for_device
@@ -45,6 +47,19 @@ def import_experiment_utils(args):
 	}
 
 
+def parse_score_topk(value):
+	value = str(value).strip()
+	if value.lower() == 'auto':
+		return 'auto'
+	try:
+		topk = int(value)
+	except ValueError as exc:
+		raise argparse.ArgumentTypeError('--score-topk must be a positive integer or auto') from exc
+	if topk < 1:
+		raise argparse.ArgumentTypeError('--score-topk must be a positive integer or auto')
+	return topk
+
+
 def parse_args():
 	parser = argparse.ArgumentParser(description='Train TranAD variants and trainable repository baselines with epoch-level metrics.')
 	parser.add_argument('--dataset', type=str, default='synthetic')
@@ -65,7 +80,7 @@ def parse_args():
 	parser.add_argument('--assoc-weight', type=float, default=0.01)
 	parser.add_argument('--memory-weight', type=float, default=0.001)
 	parser.add_argument('--score-agg', type=str, default='mean', choices=['mean', 'max', 'p95', 'topk'])
-	parser.add_argument('--score-topk', type=int, default=3)
+	parser.add_argument('--score-topk', type=parse_score_topk, default=3)
 	parser.add_argument('--seed', type=int, default=1)
 	return parser.parse_args()
 
@@ -76,13 +91,25 @@ def main():
 	args.model = utils['canonical_model_name'](args.model)
 	if args.model == 'MERLIN':
 		raise SystemExit('MERLIN is parameter-free in this repository. Use experiments/test_tranad_variants.py --model MERLIN.')
+	random.seed(args.seed)
+	np.random.seed(args.seed)
 	torch.manual_seed(args.seed)
+	if torch.cuda.is_available():
+		torch.cuda.manual_seed_all(args.seed)
 
 	device = get_best_device(args.device, args.model)
 	dtype = get_dtype_for_device(device)
 	train_np, test_np, labels = utils['load_processed_dataset'](args.dataset, less=args.less)
 
-	model = utils['build_model'](args.model, labels.shape[1], device, dtype, batch_size=args.batch_size, lr_override=args.learning_rate)
+	model = utils['build_model'](
+		args.model,
+		labels.shape[1],
+		device,
+		dtype,
+		batch_size=args.batch_size,
+		lr_override=args.learning_rate,
+		seed=args.seed,
+	)
 	train_data, test_data, _, _ = utils['prepare_experiment_data'](model, train_np, test_np, device, dtype)
 
 	optimizer = torch.optim.AdamW(model.parameters(), lr=model.lr, weight_decay=args.weight_decay)
