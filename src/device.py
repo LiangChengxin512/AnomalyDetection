@@ -4,6 +4,19 @@ import torch
 DGL_MODEL_NAMES = {'GDN', 'MTAD_GAT'}
 
 
+def _mps_usable():
+	backend = getattr(torch.backends, 'mps', None)
+	if backend is None:
+		return False
+	try:
+		if not backend.is_available():
+			return False
+		_ = torch.zeros(1, device='mps').sum().item()
+		return True
+	except Exception:
+		return False
+
+
 def get_best_device(requested='auto', model_name=None):
 	requested = (requested or 'auto').lower()
 	if requested not in {'auto', 'cpu', 'cuda', 'mps'}:
@@ -14,14 +27,14 @@ def get_best_device(requested='auto', model_name=None):
 			raise RuntimeError('CUDA was requested, but torch.cuda.is_available() is False.')
 		device = torch.device('cuda')
 	elif requested == 'mps':
-		if not torch.backends.mps.is_available():
+		if not _mps_usable():
 			raise RuntimeError('MPS was requested, but torch.backends.mps.is_available() is False.')
 		device = torch.device('mps')
 	elif requested == 'cpu':
 		device = torch.device('cpu')
 	elif torch.cuda.is_available():
 		device = torch.device('cuda')
-	elif torch.backends.mps.is_available():
+	elif _mps_usable():
 		device = torch.device('mps')
 	else:
 		device = torch.device('cpu')

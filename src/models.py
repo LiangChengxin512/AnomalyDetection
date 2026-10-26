@@ -522,7 +522,10 @@ class TranAD(nn.Module):
 		self.n = self.n_feats * self.n_window
 		self.pos_encoder = PositionalEncoding(2 * feats, 0.1, self.n_window)
 		encoder_layers = TransformerEncoderLayer(d_model=2 * feats, nhead=feats, dim_feedforward=16, dropout=0.1)
-		self.transformer_encoder = TransformerEncoder(encoder_layers, 1)
+		try:
+			self.transformer_encoder = TransformerEncoder(encoder_layers, 1, enable_nested_tensor=False)
+		except TypeError:  # Compatibility with older PyTorch releases.
+			self.transformer_encoder = TransformerEncoder(encoder_layers, 1)
 		decoder_layers1 = TransformerDecoderLayer(d_model=2 * feats, nhead=feats, dim_feedforward=16, dropout=0.1)
 		self.transformer_decoder1 = TransformerDecoder(decoder_layers1, 1)
 		decoder_layers2 = TransformerDecoderLayer(d_model=2 * feats, nhead=feats, dim_feedforward=16, dropout=0.1)
@@ -548,6 +551,11 @@ class TranAD(nn.Module):
 
 
 def __getattr__(name):
+	if name in {f'TranAD_M{i}' for i in range(5)}:
+		from src.tranad_progressive import make_tranad_ablation_class
+		model_class = make_tranad_ablation_class(name.rsplit('_', 1)[1])
+		globals()[name] = model_class
+		return model_class
 	if is_tranad_variant_name(name):
 		model_class = make_tranad_variant_class(name)
 		globals()[name] = model_class
