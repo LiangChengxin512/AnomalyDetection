@@ -1,7 +1,7 @@
 import torch
 
 
-# DGL_MODEL_NAMES = {'GDN', 'MTAD_GAT'}
+DGL_MODEL_NAMES = {'GDN', 'MTAD_GAT'}
 
 
 def _mps_usable():
