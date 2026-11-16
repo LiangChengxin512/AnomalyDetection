@@ -100,6 +100,8 @@ def main() -> int:
     ap.add_argument("--config", default=None)
     args = ap.parse_args()
     cfg = load_config(args.config)
+    if cfg.get("schema_version") == "2.0":
+        raise RuntimeError("This historical v1 CLI is disabled for protocol v2. Use scripts/reproduce_all.py; see docs/EXPERIMENTS.md.")
     tags = _load_tags(cfg)
     out_dir = resolve(cfg, "processed_dir")
     label_map = cfg["data"]["label_files"]

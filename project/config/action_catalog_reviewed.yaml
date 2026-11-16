@@ -1,0 +1,159 @@
+# Inspection workflow only; engineering schema review does not certify physical controls.
+schema_version: '2.0'
+review_scope: Software validation of inspection-only routing; no physical action approval
+actions:
+- id: operator_inspect
+  kind: inspect
+  description_en: Ask the operator to inspect the top-ranked tag(s) and related equipment.
+  equipment_id: operator_inspect
+  applies_to:
+  - '*'
+  required_tags: []
+  control_tag: null
+  review_status: approved
+  approval_level: operator_review
+  evidence_source: Always legal; first-line response to any anomaly.
+  cooldown_s: 30
+  cost: 0.05
+  requires: {}
+  rollback: No process command is issued.
+- id: inspect_pressure_loop
+  kind: inspect
+  description_en: 'Inspect P1-PC loop: PCV01/02 valves and PIT01 pressure transmitter.'
+  equipment_id: pressure_loop
+  applies_to: &id001
+  - P1_PCV01D
+  - P1_PCV01Z
+  - P1_PCV02D
+  - P1_PCV02Z
+  - P1_PIT01
+  - x1001_05_SETPOINT_OUT
+  required_tags: *id001
+  control_tag: null
+  review_status: approved
+  approval_level: operator_review
+  evidence_source: P1-PC control loop (manual fig. 4).
+  cooldown_s: 30
+  cost: 0.1
+  requires: {}
+  rollback: No process command is issued.
+- id: inspect_level_loop
+  kind: inspect
+  description_en: 'Inspect P1-LC loop: LCV01 valve and LIT01 level transmitter.'
+  equipment_id: level_loop
+  applies_to: &id002
+  - P1_LCV01D
+  - P1_LCV01Z
+  - P1_LIT01
+  - x1002_07_SETPOINT_OUT
+  - x1002_08_SETPOINT_OUT
+  required_tags: *id002
+  control_tag: null
+  review_status: approved
+  approval_level: operator_review
+  evidence_source: P1-LC control loop (manual fig. 5).
+  cooldown_s: 30
+  cost: 0.1
+  requires: {}
+  rollback: No process command is issued.
+- id: inspect_flow_loop
+  kind: inspect
+  description_en: 'Inspect P1-FC loop: FCV03 valve and FT03 flow transmitter.'
+  equipment_id: flow_loop
+  applies_to: &id003
+  - P1_FCV03D
+  - P1_FCV03Z
+  - P1_FT03
+  - P1_FT03Z
+  - x1003_10_SETPOINT_OUT
+  required_tags: *id003
+  control_tag: null
+  review_status: approved
+  approval_level: operator_review
+  evidence_source: P1-FC control loop (manual fig. 6).
+  cooldown_s: 30
+  cost: 0.1
+  requires: {}
+  rollback: No process command is issued.
+- id: inspect_temperature_loop
+  kind: inspect
+  description_en: 'Inspect P1-TC loop: FCV01/02 valves and TIT01 temperature transmitter.'
+  equipment_id: temperature_loop
+  applies_to: &id004
+  - P1_FCV01D
+  - P1_FCV01Z
+  - P1_FCV02D
+  - P1_FCV02Z
+  - P1_TIT01
+  - x1003_24_SUM_OUT
+  required_tags: *id004
+  control_tag: null
+  review_status: approved
+  approval_level: operator_review
+  evidence_source: P1-TC control loop (manual fig. 7).
+  cooldown_s: 30
+  cost: 0.1
+  requires: {}
+  rollback: No process command is issued.
+- id: inspect_cooling_pump
+  kind: inspect
+  description_en: Inspect P1-CC cooling pump PP04 command, setpoint, and status.
+  equipment_id: cooling_pump
+  applies_to: &id005
+  - P1_PP04
+  - P1_PP04D
+  - P1_PP04SP
+  required_tags: *id005
+  control_tag: null
+  review_status: approved
+  approval_level: operator_review
+  evidence_source: P1-CC cooling control.
+  cooldown_s: 30
+  cost: 0.1
+  requires: {}
+  rollback: No process command is issued.
+- id: inspect_turbine
+  kind: inspect
+  description_en: 'Inspect P2 turbine: speed demand, SCO command, SIT01 speed, vibration
+    probes.'
+  equipment_id: turbine
+  applies_to: &id006
+  - P2_AutoSD
+  - P2_ManualSD
+  - P2_SCO
+  - P2_SIT01
+  - P2_VIBTR01
+  - P2_VIBTR02
+  - P2_VIBTR03
+  - P2_VIBTR04
+  - P2_VTR01
+  - P2_VTR02
+  - P2_RTR
+  required_tags: *id006
+  control_tag: null
+  review_status: approved
+  approval_level: operator_review
+  evidence_source: P2-SC/P2-TC loops.
+  cooldown_s: 30
+  cost: 0.1
+  requires: {}
+  rollback: No process command is issued.
+- id: inspect_water_treatment
+  kind: inspect
+  description_en: 'Inspect P3 loop: LCP01 pump speed, LCV01 valve, LIT01 level.'
+  equipment_id: water_treatment
+  applies_to: &id007
+  - P3_LCP01D
+  - P3_LCV01D
+  - P3_LIT01
+  - P3_FIT01
+  - P3_PIT01
+  required_tags: *id007
+  control_tag: null
+  review_status: approved
+  approval_level: operator_review
+  evidence_source: P3-LC loop.
+  cooldown_s: 30
+  cost: 0.1
+  requires: {}
+  rollback: No process command is issued.

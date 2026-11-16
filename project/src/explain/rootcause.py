@@ -144,6 +144,8 @@ def main() -> int:
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
     cfg = load_config(args.config)
+    if cfg.get("schema_version") == "2.0":
+        raise RuntimeError("This historical v1 CLI is disabled for protocol v2. Use scripts/reproduce_all.py; see docs/EXPERIMENTS.md.")
     tags = read_json(resolve(cfg, "processed_dir") / "scaler.json")["tags"]
 
     df = pd.read_parquet(args.scores)

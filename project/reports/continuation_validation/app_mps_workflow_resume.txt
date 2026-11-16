@@ -1,0 +1,5 @@
+Site=hai2305 bundle=continuation_final_primary device=mps scope=smoke
+Capabilities: detect, rank, inspect_advice, case_workflow
+Commands: pause, resume, step, speed N, watch TAG, acknowledge CASE REASON, reject-advice CASE REASON, escalate CASE REASON, add-note CASE REASON, close-case CASE REASON, export, quit
+Input ended: DATA_QUALITY_HOLD. End of input is not evidence of recovery.
+Session exports: /Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/app_runs/continuation_cli_mps

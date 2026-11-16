@@ -1,0 +1,63 @@
+{
+  "run_id": "continuation_final",
+  "tasks": 121,
+  "task_statuses": {
+    "REUSED": 121
+  },
+  "training": [
+    {
+      "model_id": "TranAD",
+      "seed": 1,
+      "planned_epochs": 6,
+      "completed_epochs": 5,
+      "best_epoch": 5,
+      "stop_reason": "early_stopping"
+    },
+    {
+      "model_id": "TranAD",
+      "seed": 7,
+      "planned_epochs": 6,
+      "completed_epochs": 5,
+      "best_epoch": 5,
+      "stop_reason": "early_stopping"
+    },
+    {
+      "model_id": "TranAD",
+      "seed": 21,
+      "planned_epochs": 6,
+      "completed_epochs": 5,
+      "best_epoch": 5,
+      "stop_reason": "early_stopping"
+    },
+    {
+      "model_id": "TranAD_C_G_E",
+      "seed": 1,
+      "planned_epochs": 6,
+      "completed_epochs": 5,
+      "best_epoch": 5,
+      "stop_reason": "early_stopping"
+    },
+    {
+      "model_id": "TranAD_C_G_E",
+      "seed": 7,
+      "planned_epochs": 6,
+      "completed_epochs": 5,
+      "best_epoch": 5,
+      "stop_reason": "early_stopping"
+    },
+    {
+      "model_id": "TranAD_C_G_E",
+      "seed": 21,
+      "planned_epochs": 6,
+      "completed_epochs": 5,
+      "best_epoch": 5,
+      "stop_reason": "early_stopping"
+    }
+  ],
+  "is_mock": false,
+  "scope": "smoke",
+  "uncapped_full_completed": false,
+  "training_bundle_code_hash": "5cb8341b980b327967afa9eeea5410c51645b2d7a1453c9b51c364ee64cbeb13",
+  "latest_pipeline_code_hash": "c954d0d57562475ceb0565bfc6e81431e9a8a8f0cb3054a475e4b47590328b3e",
+  "frozen_models_scores_surrogates_unchanged": true
+}

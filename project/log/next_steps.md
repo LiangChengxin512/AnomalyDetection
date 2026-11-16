@@ -1,62 +1,27 @@
-# What to do next (after this engineering pass)
+# Remaining acceptance work after continuation implementation
 
-The codebase for Weeks 1–12 is complete and the pipeline runs end-to-end on
-real HAI 23.05 data with mock scores. To turn it into thesis results:
+The Python pipeline, detector registry, shared runtime, bundle loader, CLI case
+workflow, CSV exports, tests, and platform launchers are implemented. Weeks 13–20
+record actual validation separately from scientific/platform acceptance.
 
-## 1. Train the model (blocking step)
+1. Run the uncapped `full` suite on at least one target platform. Smoke runs do not
+   satisfy this gate or support comparative research claims.
+2. Execute real smoke training, resume, attribution, bundle transfer and application
+   workflow on Linux CUDA and Windows CUDA. These machines are unavailable in the
+   current macOS workspace. Windows wrapper behavior has only been statically reviewed.
+3. Install and validate the author's VUS implementation before reporting VUS-PR.
+   Until then its result remains unavailable; no approximation is substituted.
+4. If physical adjustment advice or intervention gains are needed, obtain reviewed
+   units/control mappings and independent action-response evidence. The HAI bundle
+   remains inspection-only and its surrogate effect rows remain NOT_APPLICABLE.
+5. Expand intervals to all required metrics for the final paper. Current intervals
+   cover point F1 and paired event-level RCA/business comparisons. Threshold
+   sensitivity and evidence-margin coverage exports now run from frozen artifacts;
+   the risk axis still requires independent action-response qualification.
+6. Optional application work: asynchronous explanations, live read-only adapters,
+   an evaluation-only display overlay and a browser interface. Current CLI replay
+   processes every row synchronously and records actual latency.
 
-On a GPU or Apple-silicon machine:
-
-```bash
-bash scripts/run_train.sh --device auto --epochs 20 --batch-size 128 --tag cge
-```
-
-- Uses only normal training data (train1–3); train4 is held out as validation.
-- Produces `checkpoints/TranAD_C_G_E_HAI-23.05/best.ckpt`. If you already have
-  a checkpoint from the parent repo, pass it via
-  `scripts/run_pipeline.sh --skip-train --checkpoint <path>` —
-  `load_checkpoint.py` reports any state-dict mismatches.
-
-## 2. Re-run the full pipeline with real scores
-
-```bash
-bash scripts/run_pipeline.sh --device auto
-```
-
-This regenerates scores (REAL instead of MOCK), recalibrates the threshold on
-normal validation data, and rewrites `rootcause.jsonl`, `advice.jsonl`,
-all `metrics_*.csv`, figures, and `reports/results.md`.
-
-## 3. Review before trusting numbers
-
-- **Action catalog**: `config/action_catalog.yaml` is a draft. Have each
-  action's conditions and bounds checked against the HAI technical manual /
-  your supervisor before citing policy results.
-- **Surrogate scope**: `metrics_policy.csv` rows marked `surrogate_only` are
-  proxy metrics — never describe them as real plant effects.
-- **Ablation sanity**: confirm A4 (random graph) and A5 (label shuffle)
-  degrade RCA metrics; if they don't, the graph/onset evidence isn't helping
-  and that negative result must be reported.
-- **Threshold protocol**: `thresholds.json` must trace to validation-normal
-  scores only. Never tune on test labels.
-
-## 4. Remaining engineering gaps
-
-- Baselines (PCA/IsolationForest/OCSVM, USAD/AnomalyTransformer/GDN) — hooks
-  exist in `src/bench/run_detection.py`; only TranAD paths are exercised.
-- Multi-seed runs: set `seed` in `config/experiment.yaml` per run; bootstrap
-  CIs are currently per-event.
-- Efficiency table (latency/throughput/memory) — log lines exist; consolidate
-  into `metrics_efficiency.csv` if needed for the thesis.
-- `scripts/reproduce_all.py` — verify once on a clean checkout with a real
-  checkpoint.
-
-## 5. Status map
-
-| Stage | Real data | Mock | Needs training |
-|---|---|---|---|
-| data → windows | done | — | — |
-| scoring → calibration | ready | done | yes |
-| RCA → advice | ready | done | yes |
-| surrogate → policy eval | done | done | no |
-| metrics/ablation/figures | ready | done | yes |
+Run commands are in `docs/PLATFORM_GUIDE.md`; the final validation evidence is
+summarized in `reports/continuation_validation/README.md` and `log/week20.md`.
+Historical next steps are preserved as `legacy_next_steps.md`.

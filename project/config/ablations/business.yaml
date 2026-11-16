@@ -1,0 +1,8 @@
+B00: Full business chain
+B01: No alarm consolidation
+B02: No process context
+B03: No RCA routing
+B04: No evidence abstention (offline only)
+B05: No uncertainty/support gate (offline only)
+B06: Fixed applicable conservative rule
+B07: No response deduplication

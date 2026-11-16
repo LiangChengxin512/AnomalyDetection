@@ -5,3 +5,9 @@ checkpoints/
 __pycache__/
 *.pyc
 figures/
+runs/
+bundles/
+app_runs/
+.venv/
+.cache/
+.pytest_cache/

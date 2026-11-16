@@ -45,6 +45,8 @@ def main() -> int:
     ap.add_argument("--scores", required=True)
     args = ap.parse_args()
     cfg = load_config(args.config)
+    if cfg.get("schema_version") == "2.0":
+        raise RuntimeError("This historical v1 CLI is disabled for protocol v2. Use scripts/reproduce_all.py; see docs/EXPERIMENTS.md.")
     scaler = read_json(resolve(cfg, "processed_dir") / "scaler.json")
     tags = scaler["tags"]
     span = np.asarray(scaler["span"], dtype=np.float64)

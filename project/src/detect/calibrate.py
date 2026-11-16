@@ -50,6 +50,8 @@ def main() -> int:
                     help="val scores parquet (from replay.py or mock_scores.py)")
     args = ap.parse_args()
     cfg = load_config(args.config)
+    if cfg.get("schema_version") == "2.0":
+        raise RuntimeError("This historical v1 CLI is disabled for protocol v2. Use scripts/reproduce_all.py; see docs/EXPERIMENTS.md.")
     import pandas as pd
     df = pd.read_parquet(args.scores, columns=["score"])
     res = calibrate(df["score"].to_numpy(),

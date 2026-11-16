@@ -1,0 +1,10 @@
+# Install the platform-specific torch wheel FIRST (see environment/).
+# Python 3.10 or 3.11; exact locally tested environment is recorded per run.
+numpy==1.26.4
+pandas>=1.5.3,<3
+pyarrow>=14,<26
+scikit-learn>=1.4,<1.8
+scipy>=1.10,<1.16
+PyYAML>=6,<7
+matplotlib>=3.7,<3.11
+torch==2.2.2

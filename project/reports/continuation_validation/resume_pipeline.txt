@@ -1,0 +1,2 @@
+Run: /Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/runs/continuation_final
+Status: SUCCEEDED; full acceptance: False

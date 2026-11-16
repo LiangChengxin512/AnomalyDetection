@@ -1,0 +1,38 @@
+schema_version: '2.0'
+site_id: hai2305
+dataset_id: HAI-23.05
+tag_schema: config/tag_schema.yaml
+input:
+  format: csv
+  timestamp_column: timestamp
+  source_timezone: unspecified_testbed_local
+  sample_interval_seconds: 1
+  missing_required_feature: stop
+  gap_policy: new_segment
+data:
+  train_files:
+  - data/raw/hai-23.05/hai-train1.csv
+  - data/raw/hai-23.05/hai-train2.csv
+  - data/raw/hai-23.05/hai-train3.csv
+  normal_validation_files:
+  - data/raw/hai-23.05/hai-train4.csv
+  replay_files:
+  - data/raw/hai-23.05/hai-test1.csv
+  - data/raw/hai-23.05/hai-test2.csv
+model:
+  primary: TranAD_C_G_E
+  window_samples: 128
+process:
+  graph: config/process_graph.json
+decision:
+  physical_adjustment_enabled: false
+  allow_inspection_advice: true
+  action_catalog: config/action_catalog_reviewed.yaml
+evaluation:
+  label_files:
+    hai-test1.csv: data/raw/hai-23.05/label-test1.csv
+    hai-test2.csv: data/raw/hai-23.05/label-test2.csv
+  summary_files:
+    hai-test1.csv: data/raw/hai-23.05/summary_label1.txt
+    hai-test2.csv: data/raw/hai-23.05/summary_label2.txt
+  attack_targets: config/attack_targets_hai2305.yaml

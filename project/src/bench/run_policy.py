@@ -26,6 +26,8 @@ def main() -> int:
     ap.add_argument("--config", default=None)
     args = ap.parse_args()
     cfg = load_config(args.config)
+    if cfg.get("schema_version") == "2.0":
+        raise RuntimeError("This historical v1 CLI is disabled for protocol v2. Use scripts/reproduce_all.py; see docs/EXPERIMENTS.md.")
     art = resolve(cfg, "artifacts_dir")
 
     advice = read_jsonl(art / "advice.jsonl")

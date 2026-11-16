@@ -1,0 +1,155 @@
+[prepare] running -> shared/5e26948fb07b4b13
+[evaluation_labels] running -> evaluation
+[fit_D01_seed_deterministic] running -> models/D01/seed_deterministic
+[score_D01_seed_deterministic] running -> scores/D01_seed_deterministic
+[detect_D01_seed_deterministic] running -> experiments/D01/seed_None
+[fit_D02_seed_deterministic] running -> models/D02/seed_deterministic
+[score_D02_seed_deterministic] running -> scores/D02_seed_deterministic
+[detect_D02_seed_deterministic] running -> experiments/D02/seed_None
+[fit_D03_seed_1] running -> models/D03/seed_1
+[score_D03_seed_1] running -> scores/D03_seed_1
+[detect_D03_seed_1] running -> experiments/D03/seed_1
+[fit_D03_seed_7] running -> models/D03/seed_7
+[score_D03_seed_7] running -> scores/D03_seed_7
+[detect_D03_seed_7] running -> experiments/D03/seed_7
+[fit_D03_seed_21] running -> models/D03/seed_21
+[score_D03_seed_21] running -> scores/D03_seed_21
+[detect_D03_seed_21] running -> experiments/D03/seed_21
+[fit_D04_seed_1] running -> models/D04/seed_1
+[score_D04_seed_1] running -> scores/D04_seed_1
+[detect_D04_seed_1] running -> experiments/D04/seed_1
+[fit_D04_seed_7] running -> models/D04/seed_7
+[score_D04_seed_7] running -> scores/D04_seed_7
+[detect_D04_seed_7] running -> experiments/D04/seed_7
+[fit_D04_seed_21] running -> models/D04/seed_21
+[score_D04_seed_21] running -> scores/D04_seed_21
+[detect_D04_seed_21] running -> experiments/D04/seed_21
+[fit_D05_seed_1] running -> models/D05/seed_1
+[score_D05_seed_1] running -> scores/D05_seed_1
+[detect_D05_seed_1] running -> experiments/D05/seed_1
+[fit_D05_seed_7] running -> models/D05/seed_7
+[score_D05_seed_7] running -> scores/D05_seed_7
+[detect_D05_seed_7] running -> experiments/D05/seed_7
+[fit_D05_seed_21] running -> models/D05/seed_21
+[score_D05_seed_21] running -> scores/D05_seed_21
+[detect_D05_seed_21] running -> experiments/D05/seed_21
+[fit_D06_seed_1] running -> models/D06/seed_1
+[TranAD/seed=1] epoch=1 val=0.228673 bad_epochs=0 seconds=4.66
+[TranAD/seed=1] epoch=2 val=0.186536 bad_epochs=1 seconds=3.89
+[TranAD/seed=1] epoch=3 val=0.156897 bad_epochs=2 seconds=3.87
+[TranAD/seed=1] epoch=4 val=0.145491 bad_epochs=3 seconds=4.03
+[TranAD/seed=1] epoch=5 val=0.137689 bad_epochs=4 seconds=4.01
+[score_D06_seed_1] running -> scores/D06_seed_1
+[detect_D06_seed_1] running -> experiments/D06/seed_1
+[fit_D06_seed_7] running -> models/D06/seed_7
+[TranAD/seed=7] epoch=1 val=0.220978 bad_epochs=0 seconds=3.90
+[TranAD/seed=7] epoch=2 val=0.175886 bad_epochs=1 seconds=3.85
+[TranAD/seed=7] epoch=3 val=0.139833 bad_epochs=2 seconds=3.85
+[TranAD/seed=7] epoch=4 val=0.121419 bad_epochs=3 seconds=3.90
+[TranAD/seed=7] epoch=5 val=0.11283 bad_epochs=4 seconds=3.83
+[score_D06_seed_7] running -> scores/D06_seed_7
+[detect_D06_seed_7] running -> experiments/D06/seed_7
+[fit_D06_seed_21] running -> models/D06/seed_21
+[TranAD/seed=21] epoch=1 val=0.29087 bad_epochs=0 seconds=3.90
+[TranAD/seed=21] epoch=2 val=0.229992 bad_epochs=1 seconds=3.86
+[TranAD/seed=21] epoch=3 val=0.174851 bad_epochs=2 seconds=3.85
+[TranAD/seed=21] epoch=4 val=0.144782 bad_epochs=3 seconds=3.85
+[TranAD/seed=21] epoch=5 val=0.130123 bad_epochs=4 seconds=3.86
+[score_D06_seed_21] running -> scores/D06_seed_21
+[detect_D06_seed_21] running -> experiments/D06/seed_21
+[fit_D07_seed_1] running -> models/D07/seed_1
+[TranAD_C_G_E/seed=1] epoch=1 val=0.320599 bad_epochs=0 seconds=4.52
+[TranAD_C_G_E/seed=1] epoch=2 val=0.264223 bad_epochs=1 seconds=4.12
+[TranAD_C_G_E/seed=1] epoch=3 val=0.22659 bad_epochs=2 seconds=4.40
+[TranAD_C_G_E/seed=1] epoch=4 val=0.215988 bad_epochs=3 seconds=4.60
+[TranAD_C_G_E/seed=1] epoch=5 val=0.208887 bad_epochs=4 seconds=4.16
+[score_D07_seed_1] running -> scores/D07_seed_1
+[detect_D07_seed_1] running -> experiments/D07/seed_1
+[fit_D07_seed_7] running -> models/D07/seed_7
+[TranAD_C_G_E/seed=7] epoch=1 val=0.340595 bad_epochs=0 seconds=4.23
+[TranAD_C_G_E/seed=7] epoch=2 val=0.290997 bad_epochs=1 seconds=4.18
+[TranAD_C_G_E/seed=7] epoch=3 val=0.238312 bad_epochs=2 seconds=4.23
+[TranAD_C_G_E/seed=7] epoch=4 val=0.218689 bad_epochs=3 seconds=4.13
+[TranAD_C_G_E/seed=7] epoch=5 val=0.213688 bad_epochs=4 seconds=4.25
+[score_D07_seed_7] running -> scores/D07_seed_7
+[detect_D07_seed_7] running -> experiments/D07/seed_7
+[fit_D07_seed_21] running -> models/D07/seed_21
+[TranAD_C_G_E/seed=21] epoch=1 val=0.269011 bad_epochs=0 seconds=4.14
+[TranAD_C_G_E/seed=21] epoch=2 val=0.205252 bad_epochs=1 seconds=4.10
+[TranAD_C_G_E/seed=21] epoch=3 val=0.178407 bad_epochs=2 seconds=4.10
+[TranAD_C_G_E/seed=21] epoch=4 val=0.174361 bad_epochs=3 seconds=4.11
+[TranAD_C_G_E/seed=21] epoch=5 val=0.170271 bad_epochs=4 seconds=4.11
+[score_D07_seed_21] running -> scores/D07_seed_21
+[detect_D07_seed_21] running -> experiments/D07/seed_21
+[surrogate] running -> surrogate
+[B00_seed_1] running -> experiments/B00/seed_1
+[B01_seed_1] running -> experiments/B01/seed_1
+[B02_seed_1] running -> experiments/B02/seed_1
+[B03_seed_1] running -> experiments/B03/seed_1
+[B04_seed_1] running -> experiments/B04/seed_1
+[B05_seed_1] running -> experiments/B05/seed_1
+[B06_seed_1] running -> experiments/B06/seed_1
+[B07_seed_1] running -> experiments/B07/seed_1
+[P00_seed_1] running -> experiments/P00/seed_1
+[P01_seed_1] running -> experiments/P01/seed_1
+[P02_seed_1] running -> experiments/P02/seed_1
+[P03_seed_1] running -> experiments/P03/seed_1
+[R01_seed_1] running -> experiments/R01/seed_1
+[R02_seed_1] running -> experiments/R02/seed_1
+[R03_seed_1] running -> experiments/R03/seed_1
+[R04_seed_1] running -> experiments/R04/seed_1
+[R05_seed_1] running -> experiments/R05/seed_1
+[N01_seed_1] running -> experiments/N01/seed_1
+[N02_seed_1] running -> experiments/N02/seed_1
+[N03_seed_1] running -> experiments/N03/seed_1
+[N04_seed_1] running -> experiments/N04/seed_1
+[N05_seed_1] running -> experiments/N05/seed_1
+[B00_seed_7] running -> experiments/B00/seed_7
+[B01_seed_7] running -> experiments/B01/seed_7
+[B02_seed_7] running -> experiments/B02/seed_7
+[B03_seed_7] running -> experiments/B03/seed_7
+[B04_seed_7] running -> experiments/B04/seed_7
+[B05_seed_7] running -> experiments/B05/seed_7
+[B06_seed_7] running -> experiments/B06/seed_7
+[B07_seed_7] running -> experiments/B07/seed_7
+[P00_seed_7] running -> experiments/P00/seed_7
+[P01_seed_7] running -> experiments/P01/seed_7
+[P02_seed_7] running -> experiments/P02/seed_7
+[P03_seed_7] running -> experiments/P03/seed_7
+[R01_seed_7] running -> experiments/R01/seed_7
+[R02_seed_7] running -> experiments/R02/seed_7
+[R03_seed_7] running -> experiments/R03/seed_7
+[R04_seed_7] running -> experiments/R04/seed_7
+[R05_seed_7] running -> experiments/R05/seed_7
+[N01_seed_7] running -> experiments/N01/seed_7
+[N02_seed_7] running -> experiments/N02/seed_7
+[N03_seed_7] running -> experiments/N03/seed_7
+[N04_seed_7] running -> experiments/N04/seed_7
+[N05_seed_7] running -> experiments/N05/seed_7
+[B00_seed_21] running -> experiments/B00/seed_21
+[B01_seed_21] running -> experiments/B01/seed_21
+[B02_seed_21] running -> experiments/B02/seed_21
+[B03_seed_21] running -> experiments/B03/seed_21
+[B04_seed_21] running -> experiments/B04/seed_21
+[B05_seed_21] running -> experiments/B05/seed_21
+[B06_seed_21] running -> experiments/B06/seed_21
+[B07_seed_21] running -> experiments/B07/seed_21
+[P00_seed_21] running -> experiments/P00/seed_21
+[P01_seed_21] running -> experiments/P01/seed_21
+[P02_seed_21] running -> experiments/P02/seed_21
+[P03_seed_21] running -> experiments/P03/seed_21
+[R01_seed_21] running -> experiments/R01/seed_21
+[R02_seed_21] running -> experiments/R02/seed_21
+[R03_seed_21] running -> experiments/R03/seed_21
+[R04_seed_21] running -> experiments/R04/seed_21
+[R05_seed_21] running -> experiments/R05/seed_21
+[N01_seed_21] running -> experiments/N01/seed_21
+[N02_seed_21] running -> experiments/N02/seed_21
+[N03_seed_21] running -> experiments/N03/seed_21
+[N04_seed_21] running -> experiments/N04/seed_21
+[N05_seed_21] running -> experiments/N05/seed_21
+[bundle] running -> deployment
+Application bundle: /Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/bundles/continuation_final_primary
+Matplotlib is building the font cache; this may take a moment.
+Run: /Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/runs/continuation_final
+Status: SUCCEEDED; full acceptance: False

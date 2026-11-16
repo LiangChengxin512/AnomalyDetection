@@ -1,0 +1,49 @@
+schema_version: '2.0'
+dpi: 160
+figsize: [10, 5]
+font_size: 10
+color: '#2563eb'
+formats: [png, svg]
+figures:
+  detection: {input: metrics_detection.csv, metric: point_AP, x: model_id}
+  rca: {input: metrics_rca.csv, metric: top3, x: experiment_id}
+  policy: {input: metrics_policy.csv, metric: advice_coverage, x: experiment_id}
+  ablation: {input: metrics_ablation.csv, metric: advice_coverage, x: experiment_id}
+  efficiency: {input: metrics_efficiency.csv, metric: p95_ms, x: experiment_id, show_seed_std: true}
+  precision_recall:
+    kind: curve
+    input: pr_curve_*.csv
+    x: recall
+    y: precision
+    group_by: [experiment_id, seed]
+  roc:
+    kind: curve
+    input: roc_curve_*.csv
+    x: fpr
+    y: tpr
+    group_by: [experiment_id, seed]
+  primary_timeline:
+    kind: timeline
+    input: score_timeline_D07_seed_1.csv
+  threshold_sensitivity:
+    kind: sensitivity
+    input: threshold_sensitivity.csv
+    x: quantile
+    y: normal_event_far_per_hour
+    group_by: [model_id, seed]
+    xlabel: Normal calibration score quantile (analysis only)
+    ylabel: False alarm events per normal hour
+  coverage:
+    kind: coverage
+    input: coverage_risk.csv
+    x: margin_threshold
+    y: coverage
+    group_by: [seed]
+    xlabel: Evidence margin gate (analysis only)
+    ylabel: Offered advice / all requests
+  surrogate_risk:
+    kind: effect
+    input: coverage_risk.csv
+    x: coverage
+    y: risk
+    group_by: [seed]

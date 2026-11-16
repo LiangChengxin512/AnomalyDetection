@@ -1,0 +1,54 @@
+{
+  "frames": 420,
+  "cases": [
+    [
+      "alarm:2eeca2cc6ba7ccb9:0:297",
+      "CLOSED",
+      0
+    ]
+  ],
+  "actions": [
+    [
+      "acknowledge",
+      "validation_operator",
+      "Reviewed the actual model alarm",
+      "OPEN",
+      "ACKNOWLEDGED"
+    ],
+    [
+      "reject-advice",
+      "validation_operator",
+      "Requested specialist inspection review",
+      "ACKNOWLEDGED",
+      "ADVICE_REJECTED"
+    ],
+    [
+      "escalate",
+      "validation_operator",
+      "Escalated locally for review",
+      "ADVICE_REJECTED",
+      "ESCALATED"
+    ],
+    [
+      "add-note",
+      "validation_operator",
+      "Recorded workflow validation; no physical equipment was changed",
+      "ESCALATED",
+      "UNDER_REVIEW"
+    ],
+    [
+      "resolve",
+      "validation_operator",
+      "Closed the software demonstration after review; no causal repair claim",
+      "UNDER_REVIEW",
+      "RESOLVED"
+    ],
+    [
+      "close-case",
+      "validation_operator",
+      "Closed the software demonstration after review; no causal repair claim",
+      "RESOLVED",
+      "CLOSED"
+    ]
+  ]
+}

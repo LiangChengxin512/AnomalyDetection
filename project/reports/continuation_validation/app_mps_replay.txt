@@ -1,0 +1,272 @@
+Site=hai2305 bundle=continuation_final_primary device=mps scope=smoke
+Capabilities: detect, rank, inspect_advice, case_workflow
+Commands: pause, resume, step, speed N, watch TAG, acknowledge CASE REASON, reject-advice CASE REASON, escalate CASE REASON, add-note CASE REASON, close-case CASE REASON, export, quit
+1/560 2022-08-12 16:00:01 score=19.607 threshold=20.688 state=WARMUP
+131/560 2022-08-12 16:02:11 score=21.129 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.07763
+  Advice: Inspect P1-PC loop: PCV01/02 valves and PIT01 pressure transmitter. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+136/560 2022-08-12 16:02:16 score=23.188 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.08765
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+141/560 2022-08-12 16:02:21 score=21.215 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.08338
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+146/560 2022-08-12 16:02:26 score=21.4 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.07065
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+151/560 2022-08-12 16:02:31 score=20.696 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.04428
+  Advice: Ask the operator to inspect the top-ranked tag(s) and related equipment. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+156/560 2022-08-12 16:02:36 score=20.27 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.05166
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+161/560 2022-08-12 16:02:41 score=20.505 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.09435
+  Advice: Inspect P1-PC loop: PCV01/02 valves and PIT01 pressure transmitter. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+166/560 2022-08-12 16:02:46 score=19.454 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.07822
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+171/560 2022-08-12 16:02:51 score=19.99 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.08414
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+176/560 2022-08-12 16:02:56 score=19.671 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.08662
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+181/560 2022-08-12 16:03:01 score=21.99 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.087
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+186/560 2022-08-12 16:03:06 score=19.176 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.06444
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+191/560 2022-08-12 16:03:11 score=19.991 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.0869
+  Advice: Inspect P1-PC loop: PCV01/02 valves and PIT01 pressure transmitter. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+196/560 2022-08-12 16:03:16 score=20.757 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.07645
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+201/560 2022-08-12 16:03:21 score=20.552 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.07193
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+206/560 2022-08-12 16:03:26 score=21.032 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_PP01BR, P1_FCV01Z | evidence margin=0.03864
+  Advice: Ask the operator to inspect the top-ranked tag(s) and related equipment. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+211/560 2022-08-12 16:03:31 score=23.057 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.06421
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+216/560 2022-08-12 16:03:36 score=22.212 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.05675
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+221/560 2022-08-12 16:03:41 score=21.69 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.06582
+  Advice: Inspect P1-PC loop: PCV01/02 valves and PIT01 pressure transmitter. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+226/560 2022-08-12 16:03:46 score=23.727 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.07547
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+231/560 2022-08-12 16:03:51 score=23.382 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.06084
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+236/560 2022-08-12 16:03:56 score=23.549 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.08413
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+241/560 2022-08-12 16:04:01 score=23.739 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.08258
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+246/560 2022-08-12 16:04:06 score=22.311 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.04509
+  Advice: Ask the operator to inspect the top-ranked tag(s) and related equipment. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+251/560 2022-08-12 16:04:11 score=21.898 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.06866
+  Advice: Inspect P1-PC loop: PCV01/02 valves and PIT01 pressure transmitter. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+256/560 2022-08-12 16:04:16 score=24.298 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.05503
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+261/560 2022-08-12 16:04:21 score=23.487 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.05421
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+266/560 2022-08-12 16:04:26 score=23.991 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_PP01BR, P1_FCV01Z | evidence margin=0.06489
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+271/560 2022-08-12 16:04:31 score=23.097 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.07458
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+276/560 2022-08-12 16:04:36 score=22.373 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.08396
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+281/560 2022-08-12 16:04:41 score=23.42 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.0634
+  Advice: Inspect P1-PC loop: PCV01/02 valves and PIT01 pressure transmitter. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+286/560 2022-08-12 16:04:46 score=18.629 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_FCV01Z, P1_PP01BR | evidence margin=0.01167
+  Advice: Ask the operator to inspect the top-ranked tag(s) and related equipment. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:130
+300/560 2022-08-12 16:05:00 score=20.894 threshold=20.688 state=ACTIVE
+  Candidates: P1_PP01BR, P2_VTR03, P1_FCV01Z | evidence margin=0.01382
+  Advice: Ask the operator to inspect the top-ranked tag(s) and related equipment. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+305/560 2022-08-12 16:05:05 score=20.029 threshold=20.688 state=ACTIVE
+  Candidates: P1_PP01BR, P2_VTR03, P1_FCV01Z | evidence margin=0.003747
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+310/560 2022-08-12 16:05:10 score=20.507 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P1_PP01BR, P1_FCV01Z | evidence margin=0.02072
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+315/560 2022-08-12 16:05:15 score=18.299 threshold=20.688 state=ACTIVE
+  Candidates: P1_FCV01Z, P2_VTR03, P1_PP01BR | evidence margin=0.008321
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+320/560 2022-08-12 16:05:20 score=21.748 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P1_FCV01Z, P1_PP01BR | evidence margin=0.003301
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+325/560 2022-08-12 16:05:25 score=19.713 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P1_FCV01Z, P1_PP01BR | evidence margin=0.006274
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+330/560 2022-08-12 16:05:30 score=23.06 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P1_FCV01Z, P2_RTR | evidence margin=0.01046
+  Advice: Ask the operator to inspect the top-ranked tag(s) and related equipment. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+335/560 2022-08-12 16:05:35 score=21.891 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P1_FCV01Z, P2_RTR | evidence margin=0.006551
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+340/560 2022-08-12 16:05:40 score=21.818 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P1_FCV01Z, P2_RTR | evidence margin=0.01492
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+345/560 2022-08-12 16:05:45 score=23.006 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P1_FCV01Z, P2_RTR | evidence margin=0.01433
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+350/560 2022-08-12 16:05:50 score=22.268 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_RTR, P1_FCV01Z | evidence margin=0.01725
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+355/560 2022-08-12 16:05:55 score=23.129 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_RTR, P1_FCV01Z | evidence margin=0.009466
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+360/560 2022-08-12 16:06:00 score=23.769 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_RTR, P1_FCV01Z | evidence margin=0.008885
+  Advice: Ask the operator to inspect the top-ranked tag(s) and related equipment. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+365/560 2022-08-12 16:06:05 score=25.254 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_RTR, P1_FCV01Z | evidence margin=0.006375
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+370/560 2022-08-12 16:06:10 score=24.416 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_RTR, P1_FCV01Z | evidence margin=0.005515
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+375/560 2022-08-12 16:06:15 score=23.214 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_RTR, P1_FCV01Z | evidence margin=0.007416
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+380/560 2022-08-12 16:06:20 score=23.969 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_RTR, P1_FCV01Z | evidence margin=0.008213
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+385/560 2022-08-12 16:06:25 score=25.511 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_RTR, P1_FCV01Z | evidence margin=0.009753
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+390/560 2022-08-12 16:06:30 score=24.362 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_RTR, P1_FCV01Z | evidence margin=0.01142
+  Advice: Ask the operator to inspect the top-ranked tag(s) and related equipment. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+395/560 2022-08-12 16:06:35 score=24.041 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P1_PCV02D, P2_RTR | evidence margin=0.01062
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+400/560 2022-08-12 16:06:40 score=22.846 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P2_VTR03, P2_RTR | evidence margin=0.002217
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+401/560 2022-08-12 16:06:41 score=22.784 threshold=20.688 state=ACTIVE
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+405/560 2022-08-12 16:06:45 score=23.499 threshold=20.688 state=ACTIVE
+  Candidates: P1_PCV02D, P2_VTR03, P2_RTR | evidence margin=0.00946
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+410/560 2022-08-12 16:06:50 score=23.638 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P2_RTR | evidence margin=0.08182
+  Advice: Inspect P2 turbine: speed demand, SCO command, SIT01 speed, vibration probes. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+415/560 2022-08-12 16:06:55 score=24.219 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P4_HT_PS | evidence margin=0.07806
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+420/560 2022-08-12 16:07:00 score=24.743 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P4_HT_PS | evidence margin=0.06787
+  Advice: Ask the operator to inspect the top-ranked tag(s) and related equipment. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+425/560 2022-08-12 16:07:05 score=24.965 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P4_HT_PS | evidence margin=0.06197
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+430/560 2022-08-12 16:07:10 score=24.875 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P4_HT_PS | evidence margin=0.05656
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+435/560 2022-08-12 16:07:15 score=24.242 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P4_HT_PS | evidence margin=0.04398
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+440/560 2022-08-12 16:07:20 score=24.11 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P4_HT_PS | evidence margin=0.03938
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+445/560 2022-08-12 16:07:25 score=22.12 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P4_HT_PS | evidence margin=0.03074
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+450/560 2022-08-12 16:07:30 score=21.985 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P4_HT_PS | evidence margin=0.03258
+  Advice: Ask the operator to inspect the top-ranked tag(s) and related equipment. [inspect]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+455/560 2022-08-12 16:07:35 score=19.311 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P4_HT_PS | evidence margin=0.02369
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+460/560 2022-08-12 16:07:40 score=19.042 threshold=20.688 state=ACTIVE
+  Candidates: P2_VTR03, P2_AutoGO, P4_HT_PS | evidence margin=0.02229
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+465/560 2022-08-12 16:07:45 score=18.558 threshold=20.688 state=ACTIVE
+  Candidates: P2_AutoGO, P4_HT_PS, P1_PP01BR | evidence margin=0.02504
+  Advice: advice_cooldown [suppressed]
+  Case: alarm:2eeca2cc6ba7ccb9:0:299
+Input ended: DATA_QUALITY_HOLD. End of input is not evidence of recovery.
+Session exports: /Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/app_runs/continuation_cli_mps

@@ -23,11 +23,12 @@ def build_model(name: str, n_feats: int, n_window: int, device: torch.device,
 
 
 def model_state_hash(model) -> str:
-    """Short hash over parameter names + shapes, used as model_version."""
+    """Hash actual tensor contents, including persistent buffers."""
     h = hashlib.sha256()
     for k, v in sorted(model.state_dict().items()):
         h.update(k.encode())
         h.update(str(tuple(v.shape)).encode())
+        h.update(v.detach().cpu().contiguous().numpy().tobytes())
     h.update(model.name.encode())
     return h.hexdigest()[:12]
 
@@ -38,18 +39,20 @@ def predict_batch(model, batch_bwd: torch.Tensor):
     Returns ``(x1, x2)`` each ``[B, D]`` — the two-phase prediction of the
     last window element (TranAD convention).
     """
+    if batch_bwd.ndim != 3 or batch_bwd.shape[1:] != (model.n_window, model.n_feats):
+        raise ValueError("Expected [B, W, D] matching the model construction")
     window = batch_bwd.permute(1, 0, 2)              # [W, B, D]
     elem = window[-1, :, :].unsqueeze(0)             # [1, B, D]
     x1, x2 = model(window, elem)
+    expected = (1, batch_bwd.shape[0], batch_bwd.shape[2])
+    if x1.shape != expected or x2.shape != expected:
+        raise ValueError(f"Reconstruction shape mismatch: {x1.shape}, {x2.shape}, expected {expected}")
     return x1[0], x2[0]
 
 
 def predict_batch_grad(model, batch_bwd: torch.Tensor):
     """Same as :func:`predict_batch` but keeps the graph for attribution."""
-    window = batch_bwd.permute(1, 0, 2)
-    elem = window[-1, :, :].unsqueeze(0)
-    x1, x2 = model(window, elem)
-    return x1[0], x2[0]
+    return predict_batch(model, batch_bwd)
 
 
 def attention_summary(model) -> dict:

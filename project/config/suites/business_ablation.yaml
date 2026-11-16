@@ -1,0 +1,35 @@
+schema_version: '2.0'
+suite: business_ablation
+models:
+- D07
+seeds:
+- 1
+- 7
+- 21
+smoke_rows: 0
+required_rca:
+- R01
+- R02
+- R03
+- R04
+- R05
+required_policies:
+- P00
+- P01
+- P02
+- P03
+required_ablations:
+- B00
+- B01
+- B02
+- B03
+- B04
+- B05
+- B06
+- B07
+negative_controls:
+- N01
+- N02
+- N03
+- N04
+- N05

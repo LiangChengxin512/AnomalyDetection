@@ -1,0 +1,7 @@
+{
+  "shell_config_equivalent": true,
+  "error_exit_code": 2,
+  "external_cwd": true,
+  "path_case": "spaces, Unicode and !",
+  "windows_batch_validation": "static review only; execution pending Windows host"
+}

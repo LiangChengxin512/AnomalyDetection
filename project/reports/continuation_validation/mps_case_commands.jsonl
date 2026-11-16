@@ -1,0 +1,10 @@
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:130", "command": "acknowledge", "actor": "mps_validation_operator", "reason": "Recorded replay workflow validation; no causal physical repair claim"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:130", "command": "reject-advice", "actor": "mps_validation_operator", "reason": "Recorded replay workflow validation; no causal physical repair claim"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:130", "command": "escalate", "actor": "mps_validation_operator", "reason": "Recorded replay workflow validation; no causal physical repair claim"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:130", "command": "add-note", "actor": "mps_validation_operator", "reason": "Recorded replay workflow validation; no causal physical repair claim"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:130", "command": "close-case", "actor": "mps_validation_operator", "reason": "Recorded replay workflow validation; no causal physical repair claim"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:299", "command": "acknowledge", "actor": "mps_validation_operator", "reason": "Recorded replay workflow validation; no causal physical repair claim"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:299", "command": "reject-advice", "actor": "mps_validation_operator", "reason": "Recorded replay workflow validation; no causal physical repair claim"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:299", "command": "escalate", "actor": "mps_validation_operator", "reason": "Recorded replay workflow validation; no causal physical repair claim"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:299", "command": "add-note", "actor": "mps_validation_operator", "reason": "Recorded replay workflow validation; no causal physical repair claim"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:299", "command": "close-case", "actor": "mps_validation_operator", "reason": "Recorded replay workflow validation; no causal physical repair claim"}

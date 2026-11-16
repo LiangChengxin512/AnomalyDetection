@@ -65,12 +65,17 @@ def occlusion_scores(model, windows_np, scale, agg, topk, fill_values,
     B, W, D = windows_np.shape
     base_score = _score_eval(model, windows_np, scale, agg, topk, device)
     out = np.zeros((B, D), dtype=np.float64)
-    fill = np.broadcast_to(np.asarray(fill_values, dtype=np.float32), (W, D)).copy()
-    for j in range(D):
-        occl = windows_np.copy()
-        occl[:, :, j] = fill[:, j]
-        s = _score_eval(model, occl, scale, agg, topk, device)
-        out[:, j] = np.maximum(0.0, base_score - s)  # drop = evidence for j
+    fill = np.asarray(fill_values, dtype=np.float32)
+    # Batch independent channel interventions without changing their definition.
+    channels_per_batch = max(1, int(batch_limit) // B)
+    for lo in range(0, D, channels_per_batch):
+        channels = list(range(lo, min(D, lo + channels_per_batch)))
+        occl = np.tile(windows_np, (len(channels), 1, 1))
+        for k, j in enumerate(channels):
+            occl[k*B:(k+1)*B, :, j] = fill[j]
+        s = _score_eval(model, occl, scale, agg, topk, device).reshape(len(channels), B)
+        for k, j in enumerate(channels):
+            out[:, j] = np.maximum(0.0, base_score - s[k])
     return out
 
 

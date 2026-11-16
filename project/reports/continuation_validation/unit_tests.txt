@@ -1,0 +1,36 @@
+/Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/.venv/lib/python3.10/site-packages/pandas/core/algorithms.py:522: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+  common = np.find_common_type([values.dtype, comps_array.dtype], [])
+/Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/.venv/lib/python3.10/site-packages/pandas/core/dtypes/cast.py:1641: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+  return np.find_common_type(types, [])
+/Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/.venv/lib/python3.10/site-packages/pandas/core/algorithms.py:522: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+  common = np.find_common_type([values.dtype, comps_array.dtype], [])
+[train] running -> model
+[calibrate] running -> calibration
+[score] running -> score
+[score] running -> score
+[a] running -> a
+[a] running -> a
+/Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/.venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py:373: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+  common_type = np.find_common_type(
+[TranAD_C_G_E/seed=1] epoch=1 val=0.5 bad_epochs=0 seconds=0.01
+[TranAD_C_G_E/seed=1] epoch=2 val=0.4 bad_epochs=0 seconds=0.01
+[TranAD_C_G_E/seed=1] epoch=3 val=0.39 bad_epochs=0 seconds=0.01
+[TranAD_C_G_E/seed=1] epoch=4 val=0.391 bad_epochs=1 seconds=0.01
+[TranAD_C_G_E/seed=1] epoch=5 val=0.392 bad_epochs=2 seconds=0.01
+[TranAD_C_G_E/seed=1] epoch=6 val=0.393 bad_epochs=3 seconds=0.01
+[TranAD/seed=7] epoch=1 val=0.5 bad_epochs=0 seconds=0.01
+[TranAD/seed=7] epoch=2 val=0.4 bad_epochs=0 seconds=0.01
+[TranAD/seed=7] epoch=3 val=0.3 bad_epochs=0 seconds=0.01
+[TranAD/seed=7] epoch=4 val=0.2 bad_epochs=0 seconds=0.01
+[TranAD/seed=7] epoch=1 val=0.5 bad_epochs=0 seconds=0.01
+[TranAD/seed=7] epoch=2 val=0.4 bad_epochs=0 seconds=0.01
+[TranAD/seed=7] epoch=3 val=0.3 bad_epochs=0 seconds=0.01
+[TranAD/seed=7] epoch=4 val=0.2 bad_epochs=0 seconds=0.01
+----------------------------------------------------------------------
+Ran 29 tests in 3.533s
+
+OK

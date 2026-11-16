@@ -1,0 +1,115 @@
+{
+  "frames": 560,
+  "cases": [
+    [
+      "alarm:2eeca2cc6ba7ccb9:0:130",
+      "CLOSED",
+      1
+    ],
+    [
+      "alarm:2eeca2cc6ba7ccb9:0:299",
+      "CLOSED",
+      1
+    ]
+  ],
+  "actions": [
+    [
+      "recovery-observed",
+      "system",
+      "Historical replay recovery observed; no causal claim",
+      "OPEN",
+      "OPEN"
+    ],
+    [
+      "recovery-observed",
+      "system",
+      "Historical replay recovery observed; no causal claim",
+      "OPEN",
+      "OPEN"
+    ],
+    [
+      "acknowledge",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "OPEN",
+      "ACKNOWLEDGED"
+    ],
+    [
+      "reject-advice",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "ACKNOWLEDGED",
+      "ADVICE_REJECTED"
+    ],
+    [
+      "escalate",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "ADVICE_REJECTED",
+      "ESCALATED"
+    ],
+    [
+      "add-note",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "ESCALATED",
+      "UNDER_REVIEW"
+    ],
+    [
+      "resolve",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "UNDER_REVIEW",
+      "RESOLVED"
+    ],
+    [
+      "close-case",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "RESOLVED",
+      "CLOSED"
+    ],
+    [
+      "acknowledge",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "OPEN",
+      "ACKNOWLEDGED"
+    ],
+    [
+      "reject-advice",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "ACKNOWLEDGED",
+      "ADVICE_REJECTED"
+    ],
+    [
+      "escalate",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "ADVICE_REJECTED",
+      "ESCALATED"
+    ],
+    [
+      "add-note",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "ESCALATED",
+      "UNDER_REVIEW"
+    ],
+    [
+      "resolve",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "UNDER_REVIEW",
+      "RESOLVED"
+    ],
+    [
+      "close-case",
+      "mps_validation_operator",
+      "Recorded replay workflow validation; no causal physical repair claim",
+      "RESOLVED",
+      "CLOSED"
+    ]
+  ]
+}

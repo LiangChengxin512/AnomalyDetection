@@ -16,8 +16,7 @@ from src.common.events import binary_to_ranges, ranges_to_flags
 def pr_auc(scores: np.ndarray, labels: np.ndarray) -> float:
     p, r, _ = precision_recall_curve(labels, scores)
     # precision_recall_curve returns decreasing thresholds; use auc(r, p)
-    order = np.argsort(r)
-    return float(auc(r[order], p[order]))
+    return float(auc(r, p))
 
 
 def roc_auc(scores: np.ndarray, labels: np.ndarray) -> float:
@@ -28,28 +27,11 @@ def roc_auc(scores: np.ndarray, labels: np.ndarray) -> float:
 
 
 def vus_pr(scores: np.ndarray, labels: np.ndarray, max_samples: int = 200) -> float:
-    """Volume Under Surface (PR averaged over a range of thresholds for a
-    sliding max-window), simplified implementation of the VUS metric."""
-    scores = np.asarray(scores, dtype=np.float64)
-    labels = np.asarray(labels, dtype=np.int64)
-    t_range = np.linspace(labels.mean() * 0.5 if labels.mean() > 0 else 0.001,
-                          max(1.0, scores.max()), 50)
-    prs, rcs = [], []
-    max_len = max(1, int(0.005 * len(scores)))
-    for t in t_range:
-        pred = (scores >= t).astype(int)
-        # VUS: existence of a detected point inside a labelled buffer of
-        # size l; here approximated with a dilation window of max_len
-        kernel = np.ones(max_len, dtype=int)
-        dil = np.convolve(np.pad(labels, max_len // 2), kernel, "same")[:len(labels)] > 0
-        tp = int((pred & labels.astype(bool)).sum())
-        fp = int((pred & ~labels.astype(bool)).sum())
-        fn = int((dil & ~pred.astype(bool) & labels.astype(bool)).sum()) or int(
-            (labels & ~pred.astype(bool)).sum())
-        prs.append(tp / max(1, tp + fp))
-        rcs.append(tp / max(1, tp + fn))
-    order = np.argsort(rcs)
-    return float(auc(np.asarray(rcs)[order], np.asarray(prs)[order]))
+    """Unavailable until the author's VUS implementation is installed and validated.
+
+    Never substitute the former sliding-dilation approximation under this name.
+    """
+    return float("nan")
 
 
 def event_metrics(pred: np.ndarray, labels: np.ndarray,
@@ -107,9 +89,20 @@ def etapr_metrics(pred: np.ndarray, labels: np.ndarray,
                   theta_p: float = 0.7, theta_r: float = 0.1,
                   delta: float = 0.0) -> dict:
     """Official eTaPR package (recommended by the HAI authors)."""
+    # The pinned author release raises on empty range lists. Undefined
+    # denominators remain unavailable; a missed nonempty attack set has recall 0.
+    if not np.any(labels):
+        return {"eTaPR_f1": None, "eTaP": 0.0 if np.any(pred) else None, "eTaR": None}
+    if not np.any(pred):
+        return {"eTaPR_f1": 0.0, "eTaP": None, "eTaR": 0.0}
+    import sys
+    from pathlib import Path
+    vendor = Path(__file__).resolve().parents[2] / 'vendor' / 'etapr'
+    if str(vendor) not in sys.path:
+        sys.path.insert(0, str(vendor))
     try:
         from eTaPR_pkg import etapr
-    except Exception:
+    except ImportError:
         return {"eTaPR_f1": None, "eTaP": None, "eTaR": None}
     res = etapr.evaluate_w_streams(labels.astype(int).tolist(),
                                    pred.astype(int).tolist(),

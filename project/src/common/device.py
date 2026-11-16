@@ -25,9 +25,10 @@ def _mps_usable() -> bool:
         return False
 
 
-def get_best_device(requested: str = "auto", model_name: str | None = None) -> torch.device:
+def get_best_device(requested: str | None = None, model_name: str | None = None,
+                    configured: str = "auto") -> torch.device:
     env = os.environ.get(DEVICE_ENV_VAR)
-    requested = (env or requested or "auto").lower()
+    requested = (requested or env or configured or "auto").lower()
     if requested not in {"auto", "cpu", "cuda", "mps"}:
         raise ValueError(f"Unsupported device '{requested}'. Use auto, cpu, cuda, or mps.")
 

@@ -57,6 +57,8 @@ def main() -> int:
     ap.add_argument("--baseline-max-train", type=int, default=50000)
     args = ap.parse_args()
     cfg = load_config(args.config)
+    if cfg.get("schema_version") == "2.0":
+        raise RuntimeError("This historical v1 CLI is disabled for protocol v2. Use scripts/reproduce_all.py; see docs/EXPERIMENTS.md.")
     art = resolve(cfg, "artifacts_dir")
     tags = read_json(resolve(cfg, "processed_dir") / "scaler.json")["tags"]
 
@@ -76,10 +78,7 @@ def main() -> int:
                             cfg["threshold"]["quantile"],
                             cfg["threshold"]["far_per_hour"])
         else:
-            print(f"[bench] WARNING: no val scores for {name}; using test-quantile "
-                  "(NOT protocol-clean, flagged)")
-            thr = {"threshold": float(np.quantile(df["score"], cfg["threshold"]["quantile"])),
-                   "method": "TEST_QUANTILE_FALLBACK_NOT_CLEAN"}
+            raise FileNotFoundError(f"Missing normal calibration scores: {val_path}; test calibration is prohibited")
         rep = _eval_scores(name, df["score"].to_numpy(),
                            df["label_attack"].to_numpy(), cfg, thr)
         rep["val_scores_file"] = str(val_path) if val_path.exists() else None

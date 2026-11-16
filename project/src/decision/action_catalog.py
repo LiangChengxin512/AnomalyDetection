@@ -50,8 +50,11 @@ def enumerate_legal_actions(cat: dict, candidate_tags: list[str],
     for a in cat["actions"]:
         if not action_applies(a, candidate_tags):
             continue
-        ok = True
+        ok = a.get("review_status") == "approved"
         for tag, rng in (a.get("requires") or {}).items():
+            if tag_values is None or tag not in tag_values:
+                ok = False
+                continue
             if tag_values is not None and tag in tag_values:
                 v = tag_values[tag]
                 if v < rng.get("min", -1e18) or v > rng.get("max", 1e18):

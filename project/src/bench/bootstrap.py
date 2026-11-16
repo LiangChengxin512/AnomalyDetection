@@ -33,6 +33,8 @@ def main() -> int:
     ap.add_argument("--scores", required=True)
     args = ap.parse_args()
     cfg = load_config(args.config)
+    if cfg.get("schema_version") == "2.0":
+        raise RuntimeError("This historical v1 CLI is disabled for protocol v2. Use scripts/reproduce_all.py; see docs/EXPERIMENTS.md.")
     B = cfg["eval"]["bootstrap_samples"]
     alpha = cfg["eval"]["bootstrap_alpha"]
     rng = np.random.default_rng(0)

@@ -1,0 +1,69 @@
+schema_version: "1.0"
+site_id: factory_a
+
+input:
+  format: csv
+  timestamp_column: timestamp
+  source_timezone: UTC
+  sample_interval_seconds: 1
+  missing_required_feature: stop
+  gap_policy: new_segment
+
+data:
+  train_files:
+    - data/factory_a/normal_train.csv
+  normal_validation_files:
+    - data/factory_a/normal_validation.csv
+  replay_files:
+    - data/factory_a/replay.csv
+
+features:
+  - name: BOILER_PRESSURE
+    source_column: Pressure_kPa
+    kind: continuous
+    equipment_id: boiler_1
+    source_unit: kPa
+    unit: bar
+    transform: {scale: 0.01, offset: 0.0}
+    hard_bounds: {min: null, max: null}
+
+  - name: WATER_FLOW
+    source_column: Flow_m3h
+    kind: continuous
+    equipment_id: water_loop_1
+    source_unit: m3_per_hour
+    unit: m3_per_hour
+    transform: {scale: 1.0, offset: 0.0}
+    hard_bounds: {min: null, max: null}
+
+  - name: PUMP_SPEED_COMMAND
+    source_column: PumpSpeed_pct
+    kind: continuous
+    equipment_id: pump_1
+    source_unit: percent
+    unit: percent
+    transform: {scale: 1.0, offset: 0.0}
+    hard_bounds: {min: null, max: null}
+
+  - name: PUMP_RUNNING
+    source_column: PumpRunning
+    kind: discrete
+    equipment_id: pump_1
+    source_unit: boolean
+    unit: boolean
+    allowed_values: [0, 1]
+    transform: {scale: 1.0, offset: 0.0}
+
+model:
+  primary: TranAD_C_G_E
+  window_samples: 128
+  score_aggregation: topk
+  score_topk: 3
+
+process:
+  graph: null
+
+decision:
+  physical_adjustment_enabled: false
+  allow_inspection_advice: true
+  action_catalog: config/action_catalog_factory_a.yaml

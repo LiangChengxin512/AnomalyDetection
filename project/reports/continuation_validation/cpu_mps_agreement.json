@@ -1,0 +1,14 @@
+{
+  "bundle_id": "continuation_final_primary",
+  "reference_device": "cpu",
+  "tested_device": "mps",
+  "rows": 32,
+  "atol": 0.0001,
+  "rtol": 0.001,
+  "max_absolute_score_difference": 2.4291332088921536e-05,
+  "max_absolute_evidence_difference": 6.836989754077649e-05,
+  "max_absolute_gradient_difference": 2.181529998779297e-05,
+  "threshold_band_samples": 1,
+  "prediction_disagreements": 0,
+  "passed": true
+}

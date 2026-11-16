@@ -1,0 +1,26 @@
+{
+  "path": "checkpoints/TranAD_C_G_E_HAI-23.05/best.ckpt",
+  "sha256": "d30bb780ed26b9053655866467e6c0e1c4a14e7b29cb24f78d52e942e86a5f54",
+  "model": "TranAD_C_G_E",
+  "n_feats": 86,
+  "n_window": 128,
+  "saved_epoch": 0,
+  "saved_metrics": {
+    "train_loss": 0.19174302741885185,
+    "recon_loss": 0.19174302741885185,
+    "aux_loss": 0.0,
+    "epoch_time_s": 52.44,
+    "val_recon_loss": 0.22923589785893758,
+    "lr": 0.0001,
+    "epoch": 0
+  },
+  "batch_shape": [
+    2,
+    86
+  ],
+  "finite_forward": true,
+  "mask_sensitive_max_difference": 0.003688037395477295,
+  "certification": "NOT_REUSABLE_UNDER_V2_PROTOCOL",
+  "reason": "Missing authenticated feature order/type mask, validation role and complete training/resume provenance",
+  "audit_only_mask_source": "historical processed scaler; not evidence of original checkpoint binding"
+}

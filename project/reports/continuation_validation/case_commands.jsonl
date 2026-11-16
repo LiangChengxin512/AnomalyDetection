@@ -1,0 +1,5 @@
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:297", "command": "acknowledge", "actor": "validation_operator", "reason": "Reviewed the actual model alarm"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:297", "command": "reject-advice", "actor": "validation_operator", "reason": "Requested specialist inspection review"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:297", "command": "escalate", "actor": "validation_operator", "reason": "Escalated locally for review"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:297", "command": "add-note", "actor": "validation_operator", "reason": "Recorded workflow validation; no physical equipment was changed"}
+{"case_id": "alarm:2eeca2cc6ba7ccb9:0:297", "command": "close-case", "actor": "validation_operator", "reason": "Closed the software demonstration after review; no causal repair claim"}

@@ -29,11 +29,13 @@ def json_safe(value: Any) -> Any:
     if isinstance(value, (list, tuple)):
         return [json_safe(v) for v in value]
     if isinstance(value, np.generic):
-        return value.item()
+        return json_safe(value.item())
     if isinstance(value, np.ndarray):
         return [json_safe(v) for v in value.tolist()]
     if isinstance(value, Path):
         return str(value)
+    if isinstance(value, pd.Timestamp):
+        return value.isoformat()
     if isinstance(value, float) and not np.isfinite(value):
         return None
     return value
@@ -42,8 +44,10 @@ def json_safe(value: Any) -> Any:
 def write_json(path: str | os.PathLike, data: Any) -> None:
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
-    with open(p, "w", encoding="utf-8") as f:
+    tmp = p.with_name(p.name + ".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(json_safe(data), f, indent=2, allow_nan=False)
+    os.replace(tmp, p)
 
 
 def read_json(path: str | os.PathLike) -> Any:

@@ -1,0 +1,12 @@
+[prepare] running -> shared/5e26948fb07b4b13
+[evaluation_labels] running -> evaluation
+[fit_D01_seed_deterministic] running -> models/D01/seed_deterministic
+[score_D01_seed_deterministic] running -> scores/D01_seed_deterministic
+[detect_D01_seed_deterministic] running -> experiments/D01/seed_None
+[fit_D02_seed_deterministic] running -> models/D02/seed_deterministic
+[score_D02_seed_deterministic] running -> scores/D02_seed_deterministic
+[detect_D02_seed_deterministic] running -> experiments/D02/seed_None
+[surrogate] running -> surrogate
+Matplotlib is building the font cache; this may take a moment.
+Run: /Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/runs/continuation_cpu_exports
+Status: SUCCEEDED; full acceptance: False

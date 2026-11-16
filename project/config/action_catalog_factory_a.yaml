@@ -1,0 +1,15 @@
+schema_version: '2.0'
+actions:
+  - id: inspect_boiler_pressure
+    kind: inspect
+    description_en: Check the pressure transmitter and review the boiler pressure loop.
+    equipment_id: boiler_1
+    applies_to: [BOILER_PRESSURE]
+    required_tags: [BOILER_PRESSURE]
+    control_tag: null
+    approval_level: operator_review
+    review_status: pending
+    evidence_source: Replace this example with a reviewed local operating procedure.
+    cooldown_s: 30
+    cost: 0.1
+    requires: {}
