@@ -1,0 +1,134 @@
+# Action catalog for the constrained shadow policy.
+#
+# Every entry is an ADVISORY suggestion for a human operator. Nothing in
+# this catalog is written to a PLC or drives the physical process. Bounds
+# come from the HAI technical manual normal operating ranges where known;
+# unverified physical actions are intentionally absent.
+#
+# Fields:
+#   kind            inspect | hold | adjust | mode
+#   affects         SCADA tags the action would influence (for surrogate
+#                   rollouts; advisory actions may have an empty list)
+#   applies_to      controllers/tags this action is relevant for
+#   direction       +1 pushes affected tags up, -1 down, 0 none
+#   max_delta       per-step bound on the affected tag (native units)
+#   requires        tags that must currently be inside [min,max] to be legal
+#   cost            relative operator/process cost in [0,1]
+#   rollback        how the suggestion is undone
+#   evidence        manual page / rationale for auditability
+
+schema_version: "1.0"
+defaults:
+  max_delta: 0.0
+  cost: 0.1
+  rollback: "advisory only; no automatic change"
+
+actions:
+  - id: "operator_inspect"
+    kind: "inspect"
+    description: "Ask the operator to inspect the top-ranked tag(s) and related equipment."
+    affects: []
+    applies_to: ["*"]
+    direction: 0
+    cost: 0.05
+    rollback: "n/a"
+    evidence: "Always legal; first-line response to any anomaly."
+
+  - id: "hold_current_setpoints"
+    kind: "hold"
+    description: "Keep all loop setpoints at their current values; do not issue new SP commands."
+    affects: ["x1001_05_SETPOINT_OUT", "x1002_07_SETPOINT_OUT", "x1002_08_SETPOINT_OUT",
+              "x1003_10_SETPOINT_OUT", "x1003_18_SETPOINT_OUT", "x1003_24_SUM_OUT",
+              "P2_AutoSD", "P2_ManualSD", "P1_PP04SP", "P4_HT_PS", "P4_ST_PS"]
+    applies_to: ["*"]
+    direction: 0
+    cost: 0.10
+    rollback: "resume normal setpoint scheduling"
+    evidence: "SP manipulation is the dominant attack class (AP01-AP47)."
+
+  - id: "inspect_pressure_loop"
+    kind: "inspect"
+    description: "Inspect P1-PC loop: PCV01/02 valves and PIT01 pressure transmitter."
+    affects: []
+    applies_to: ["P1_PCV01D", "P1_PCV01Z", "P1_PCV02D", "P1_PCV02Z", "P1_PIT01", "x1001_05_SETPOINT_OUT"]
+    direction: 0
+    cost: 0.10
+    evidence: "P1-PC control loop (manual fig. 4)."
+
+  - id: "inspect_level_loop"
+    kind: "inspect"
+    description: "Inspect P1-LC loop: LCV01 valve and LIT01 level transmitter."
+    affects: []
+    applies_to: ["P1_LCV01D", "P1_LCV01Z", "P1_LIT01", "x1002_07_SETPOINT_OUT", "x1002_08_SETPOINT_OUT"]
+    direction: 0
+    cost: 0.10
+    evidence: "P1-LC control loop (manual fig. 5)."
+
+  - id: "inspect_flow_loop"
+    kind: "inspect"
+    description: "Inspect P1-FC loop: FCV03 valve and FT03 flow transmitter."
+    affects: []
+    applies_to: ["P1_FCV03D", "P1_FCV03Z", "P1_FT03", "P1_FT03Z", "x1003_10_SETPOINT_OUT"]
+    direction: 0
+    cost: 0.10
+    evidence: "P1-FC control loop (manual fig. 6)."
+
+  - id: "inspect_temperature_loop"
+    kind: "inspect"
+    description: "Inspect P1-TC loop: FCV01/02 valves and TIT01 temperature transmitter."
+    affects: []
+    applies_to: ["P1_FCV01D", "P1_FCV01Z", "P1_FCV02D", "P1_FCV02Z", "P1_TIT01", "x1003_24_SUM_OUT"]
+    direction: 0
+    cost: 0.10
+    evidence: "P1-TC control loop (manual fig. 7)."
+
+  - id: "inspect_cooling_pump"
+    kind: "inspect"
+    description: "Inspect P1-CC cooling pump PP04 command, setpoint, and status."
+    affects: []
+    applies_to: ["P1_PP04", "P1_PP04D", "P1_PP04SP"]
+    direction: 0
+    cost: 0.10
+    evidence: "P1-CC cooling control."
+
+  - id: "inspect_turbine"
+    kind: "inspect"
+    description: "Inspect P2 turbine: speed demand, SCO command, SIT01 speed, vibration probes."
+    affects: []
+    applies_to: ["P2_AutoSD", "P2_ManualSD", "P2_SCO", "P2_SIT01", "P2_VIBTR01",
+                 "P2_VIBTR02", "P2_VIBTR03", "P2_VIBTR04", "P2_VTR01", "P2_VTR02", "P2_RTR"]
+    direction: 0
+    cost: 0.10
+    evidence: "P2-SC/P2-TC loops."
+
+  - id: "inspect_water_treatment"
+    kind: "inspect"
+    description: "Inspect P3 loop: LCP01 pump speed, LCV01 valve, LIT01 level."
+    affects: []
+    applies_to: ["P3_LCP01D", "P3_LCV01D", "P3_LIT01", "P3_FIT01", "P3_PIT01"]
+    direction: 0
+    cost: 0.10
+    evidence: "P3-LC loop."
+
+  - id: "nudge_setpoint_bounded"
+    kind: "adjust"
+    description: "Advise a small bounded adjustment of the implicated loop setpoint toward the normal-operating band."
+    affects: ["x1001_05_SETPOINT_OUT", "x1002_07_SETPOINT_OUT", "x1002_08_SETPOINT_OUT",
+              "x1003_10_SETPOINT_OUT", "x1003_18_SETPOINT_OUT", "x1003_24_SUM_OUT"]
+    applies_to: ["P1_PCV01D", "P1_LCV01D", "P1_FCV03D", "P1_FCV01D"]
+    direction: -1
+    max_delta: 5.0
+    requires: {}
+    cost: 0.30
+    rollback: "restore previous setpoint value"
+    evidence: "Bounded, reversible SP nudge; only proposed when the loop PV is outside its normal envelope."
+
+  - id: "conservative_mode"
+    kind: "mode"
+    description: "Advise switching the implicated loop to a conservative monitoring mode (manual oversight, frozen commands)."
+    affects: []
+    applies_to: ["*"]
+    direction: 0
+    cost: 0.40
+    rollback: "return to automatic control after manual review"
+    evidence: "Fallback suggestion for persistent high-confidence anomalies."

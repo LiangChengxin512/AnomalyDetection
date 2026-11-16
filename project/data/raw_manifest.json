@@ -1,0 +1,106 @@
+{
+  "dataset_version": "HAI-23.05",
+  "scanned_at": "2026-11-07T20:06:10.150755+00:00",
+  "files": [
+    {
+      "file": "data/raw/HAI_README.md",
+      "size": 29819,
+      "sha256": "23192d8468c5afa925aa77939e49e5e16bd6f509604ca2e5751e07d6c5ccfcef"
+    },
+    {
+      "file": "data/raw/graph/boiler/dcs_1001h.json",
+      "size": 4426,
+      "sha256": "3cebccfed59f8f2da4fe90ea8b9055da64ace270133e8a8e281377ac37c7e602"
+    },
+    {
+      "file": "data/raw/graph/boiler/dcs_1002h.json",
+      "size": 7341,
+      "sha256": "d3f060df16c97a5dbf18907199d7e75f61cc58587100fe76b9d4f8a6be354fd6"
+    },
+    {
+      "file": "data/raw/graph/boiler/dcs_1003h.json",
+      "size": 6199,
+      "sha256": "c23f069441d6acfcd3201b224d56444699fb6f6de295f438dbdcee1f4f2c3939"
+    },
+    {
+      "file": "data/raw/graph/boiler/dcs_1004h.json",
+      "size": 14859,
+      "sha256": "271be9f269d99ae546acd52df4104e0e322b36ac7052a4e66222735ea605114d"
+    },
+    {
+      "file": "data/raw/graph/boiler/dcs_1010h.json",
+      "size": 10344,
+      "sha256": "ca7b6548807feda9f30692add784f744644e0f89a7b69c9130800b6615a8c1e9"
+    },
+    {
+      "file": "data/raw/graph/boiler/dcs_1011h.json",
+      "size": 10378,
+      "sha256": "ca56538e33fe46be3582a98ef4ddf6267ccb6adc7a84a63c081278cc00800999"
+    },
+    {
+      "file": "data/raw/graph/boiler/dcs_1020h.json",
+      "size": 4041,
+      "sha256": "fb46f76b5d6e75c5348156523fbf40e0fbd9259e08c9598fa7d422a3d6ac6b70"
+    },
+    {
+      "file": "data/raw/graph/boiler/phy_boiler.json",
+      "size": 69621,
+      "sha256": "eca648d73c0444a35294608c2a1067256d7b32547257153226fece2de3febd07"
+    },
+    {
+      "file": "data/raw/hai-23.05/hai-test1.csv",
+      "size": 31255559,
+      "sha256": "78c7f1d4de1f2ab9ccc2f8c719f80f831033543adb0c81d0d78f84f40838d4be"
+    },
+    {
+      "file": "data/raw/hai-23.05/hai-test2.csv",
+      "size": 132946575,
+      "sha256": "b2b8dd295aefd87e39260fe43cb4c73ee86d6264b0ac4b0761e7efb0c2b545c3"
+    },
+    {
+      "file": "data/raw/hai-23.05/hai-train1.csv",
+      "size": 162418984,
+      "sha256": "53007b0ba604fbf338e7ac2e08cd81d874b5d1388f3aecb213ddcba5bf2bec4a"
+    },
+    {
+      "file": "data/raw/hai-23.05/hai-train2.csv",
+      "size": 169121615,
+      "sha256": "0e520e82bf78a661ab19ce4967f3c766bd809820f457a9c90c365102d4534c56"
+    },
+    {
+      "file": "data/raw/hai-23.05/hai-train3.csv",
+      "size": 72774793,
+      "sha256": "bfcec2dc05adea103e7491546b0e28268faaa26d3cc717d10f4595c94b81e85d"
+    },
+    {
+      "file": "data/raw/hai-23.05/hai-train4.csv",
+      "size": 114494940,
+      "sha256": "56658c83657d42a65db982b864362e0d0ffeb96d1f7b357d5e76e3a5c522d940"
+    },
+    {
+      "file": "data/raw/hai-23.05/label-test1.csv",
+      "size": 1242017,
+      "sha256": "eaf69edb9c5834bc393afd7bf658b5e408d34fd7bfc3261f80516765fb818fbc"
+    },
+    {
+      "file": "data/raw/hai-23.05/label-test2.csv",
+      "size": 4500018,
+      "sha256": "8090c44981176e39b0f01a7126a80248ac0b93355c00f9db4d4e2f2106452b92"
+    },
+    {
+      "file": "data/raw/hai-23.05/summary_label1.txt",
+      "size": 1591,
+      "sha256": "9d8fb32ee1e816c88f93c8d661f90a7736802582d3572a1e1ebd953783353da6"
+    },
+    {
+      "file": "data/raw/hai-23.05/summary_label2.txt",
+      "size": 2911,
+      "sha256": "b564024a105981415a81dd1b338a48ad7ad5be511849884232540f1a6550e5c1"
+    },
+    {
+      "file": "data/raw/hai_dataset_technical_details.pdf",
+      "size": 2929375,
+      "sha256": "0668345c4e80331b918fe17c81f8f363b13bd22886831d286e761bc62b71a556"
+    }
+  ]
+}

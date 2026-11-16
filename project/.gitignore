@@ -1,0 +1,7 @@
+data/raw/
+data/processed/
+artifacts/
+checkpoints/
+__pycache__/
+*.pyc
+figures/

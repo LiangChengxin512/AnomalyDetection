@@ -1,0 +1,84 @@
+# Attack ground truth for HAI 23.05, transcribed from the official
+# technical manual (v4.0, pages 31-32, "ATTACK OPERATION" table) and the
+# summary_label*.txt time ranges shipped with the dataset.
+#
+# target_points : literal manipulated points from the manual. SP/points such
+#                 as P1_B2016 are internal controller variables that are NOT
+#                 SCADA columns (SP attacks are hidden from the HMI by
+#                 design), so they cannot be scored directly.
+# observable_tags : SCADA columns expected to carry primary evidence,
+#                 derived from the manual's documented control loops:
+#                   P1-PC: SP P1_B2016 -> CV P1_PCV01D/P1_PCV02D -> PV P1_PIT01
+#                   P1-LC: SP P1_B3004 -> CV P1_LCV01D        -> PV P1_LIT01
+#                   P1-FC: SP P1_B3005 -> CV P1_FCV03D        -> PV P1_FT03
+#                   P1-TC: SP P1_B4002 -> CV P1_FCV01D/P1_FCV02D -> PV P1_TIT01
+#                   P1-CC: P1_PP04 (cooling pump command)
+#                   P2-SC: SP P2_AutoSD/P2_ManualSD -> CV P2_SCO -> PV P2_SIT01
+#                   P2-TC: trip points P2_VTR01/02/03/04, P2_RTR
+#                   P3-LC: CV P3_LCP01D / P3_LCV01D -> PV P3_LIT01
+#                 AE## internal-point attacks are mapped to the affected
+#                 control valve/pump command tags with confidence "low".
+#
+# Times are the exact labelled ranges from summary_label*.txt (local
+# testbed time, 1 s grid). Two label runs may exist that have no manual
+# table entry; they are kept with attack_id null and reported separately.
+
+dataset_version: "HAI-23.05"
+source: "hai_dataset_technical_details.pdf v4.0 pp.31-32 + summary_label{1,2}.txt"
+
+events:
+  # ---------------- hai-test1.csv (2022-08-12 16:00 .. 2022-08-13 07:00)
+  - {attack_id: A101, file: hai-test1.csv, scenario: AP01, controller: "P1-PC", start: "2022-08-12 16:25:04", end: "2022-08-12 16:29:01", target_points: [P1_B2016], observable_tags: [x1001_05_SETPOINT_OUT, P1_PCV01D, P1_PCV01Z, P1_PCV02D, P1_PCV02Z, P1_PIT01]}
+  - {attack_id: A102, file: hai-test1.csv, scenario: AP02, controller: "P1-PC", start: "2022-08-12 17:35:01", end: "2022-08-12 17:38:19", target_points: [P1_B2016, P1_PIT01], observable_tags: [x1001_05_SETPOINT_OUT, P1_PCV01D, P1_PCV01Z, P1_PIT01]}
+  - {attack_id: A103, file: hai-test1.csv, scenario: AP04, controller: "P1-PC", start: "2022-08-12 18:32:17", end: "2022-08-12 18:34:53", target_points: [P1_PCV01D], observable_tags: [P1_PCV01D, P1_PCV01Z]}
+  - {attack_id: A104, file: hai-test1.csv, scenario: AP05, controller: "P1-PC", start: "2022-08-12 19:21:04", end: "2022-08-12 19:23:48", target_points: [P1_PCV01D, P1_PIT01], observable_tags: [P1_PCV01D, P1_PCV01Z, P1_PIT01]}
+  - {attack_id: A105, file: hai-test1.csv, scenario: AP07, controller: "P1-PC", start: "2022-08-12 20:43:01", end: "2022-08-12 20:45:42", target_points: [P1_PCV01D], observable_tags: [P1_PCV01D, P1_PCV01Z]}
+  - {attack_id: A106, file: hai-test1.csv, scenario: AP03, controller: "P1-PC", start: "2022-08-12 21:36:01", end: "2022-08-12 21:39:18", target_points: [P1_B2016, P1_PIT01, P1_FT01], observable_tags: [x1001_05_SETPOINT_OUT, P1_PCV01D, P1_PCV01Z, P1_PIT01, P1_FT01, P1_FT01Z]}
+  - {attack_id: A107, file: hai-test1.csv, scenario: AP40, controller: "P1-PC", start: "2022-08-12 22:47:01", end: "2022-08-12 22:57:05", target_points: [P1_B2016], observable_tags: [x1001_05_SETPOINT_OUT, P1_PCV01D, P1_PCV01Z, P1_PCV02D, P1_PCV02Z, P1_PIT01]}
+  - {attack_id: A108, file: hai-test1.csv, scenario: AP08, controller: "P1-FC", start: "2022-08-12 23:35:15", end: "2022-08-12 23:36:51", target_points: [P1_B3005], observable_tags: [x1003_10_SETPOINT_OUT, x1003_18_SETPOINT_OUT, P1_FCV03D, P1_FCV03Z, P1_FT03, P1_FT03Z]}
+  - {attack_id: A109, file: hai-test1.csv, scenario: AP09, controller: "P1-FC", start: "2022-08-13 00:25:04", end: "2022-08-13 00:27:14", target_points: [P1_B3005, P1_FT03], observable_tags: [x1003_10_SETPOINT_OUT, x1003_18_SETPOINT_OUT, P1_FCV03D, P1_FCV03Z, P1_FT03, P1_FT03Z]}
+  - {attack_id: A110, file: hai-test1.csv, scenario: AP11, controller: "P1-FC", start: "2022-08-13 01:34:09", end: "2022-08-13 01:35:04", target_points: [P1_FCV03D], observable_tags: [P1_FCV03D, P1_FCV03Z]}
+  - {attack_id: A111, file: hai-test1.csv, scenario: AP12, controller: "P1-FC", start: "2022-08-13 02:21:04", end: "2022-08-13 02:23:15", target_points: [P1_FCV03D, P1_FT03], observable_tags: [P1_FCV03D, P1_FCV03Z, P1_FT03, P1_FT03Z]}
+  - {attack_id: A112, file: hai-test1.csv, scenario: AP13, controller: "P1-FC", start: "2022-08-13 03:26:03", end: "2022-08-13 03:27:21", target_points: [P1_FCV03D], observable_tags: [P1_FCV03D, P1_FCV03Z]}
+  - {attack_id: A113, file: hai-test1.csv, scenario: AP10, controller: "P1-FC", start: "2022-08-13 04:43:02", end: "2022-08-13 04:45:15", target_points: [P1_B3005, P1_FT03, P1_LIT01], observable_tags: [x1003_10_SETPOINT_OUT, x1003_18_SETPOINT_OUT, P1_FCV03D, P1_FCV03Z, P1_FT03, P1_FT03Z, P1_LIT01]}
+  - {attack_id: A114, file: hai-test1.csv, scenario: AP41, controller: "P1-FC", start: "2022-08-13 05:40:08", end: "2022-08-13 05:50:35", target_points: [P1_B3005], observable_tags: [x1003_10_SETPOINT_OUT, x1003_18_SETPOINT_OUT, P1_FCV03D, P1_FCV03Z, P1_FT03, P1_FT03Z]}
+
+  # ---------------- hai-test2.csv (2022-08-17 00:00 .. 2022-08-19 16:00)
+  - {attack_id: A201, file: hai-test2.csv, scenario: AP14, controller: "P1-LC", start: "2022-08-17 01:27:06", end: "2022-08-17 01:29:18", target_points: [P1_B3004], observable_tags: [x1002_07_SETPOINT_OUT, x1002_08_SETPOINT_OUT, P1_LCV01D, P1_LCV01Z, P1_LIT01]}
+  - {attack_id: A202, file: hai-test2.csv, scenario: AP15, controller: "P1-LC", start: "2022-08-17 03:37:02", end: "2022-08-17 03:39:13", target_points: [P1_B3004, P1_LIT01], observable_tags: [x1002_07_SETPOINT_OUT, x1002_08_SETPOINT_OUT, P1_LCV01D, P1_LCV01Z, P1_LIT01]}
+  - {attack_id: A203, file: hai-test2.csv, scenario: AP16, controller: "P1-LC", start: "2022-08-17 04:21:03", end: "2022-08-17 04:22:11", target_points: [P1_LCV01D], observable_tags: [P1_LCV01D, P1_LCV01Z]}
+  - {attack_id: A204, file: hai-test2.csv, scenario: AP17, controller: "P1-LC", start: "2022-08-17 05:46:02", end: "2022-08-17 05:48:04", target_points: [P1_LCV01D, P1_LIT01], observable_tags: [P1_LCV01D, P1_LCV01Z, P1_LIT01]}
+  - {attack_id: A205, file: hai-test2.csv, scenario: AP18, controller: "P1-LC", start: "2022-08-17 06:21:05", end: "2022-08-17 06:22:30", target_points: [P1_LCV01D], observable_tags: [P1_LCV01D, P1_LCV01Z]}
+  - {attack_id: A206, file: hai-test2.csv, scenario: AP03, controller: "P1-PC", start: "2022-08-17 08:36:01", end: "2022-08-17 08:39:17", target_points: [P1_B2016, P1_PIT01, P1_FT01], observable_tags: [x1001_05_SETPOINT_OUT, P1_PCV01D, P1_PCV01Z, P1_PIT01, P1_FT01, P1_FT01Z]}
+  - {attack_id: A207, file: hai-test2.csv, scenario: AP43, controller: "P1-LC", start: "2022-08-17 09:42:04", end: "2022-08-17 09:52:18", target_points: [P1_LCV01D], observable_tags: [P1_LCV01D, P1_LCV01Z]}
+  - {attack_id: A208, file: hai-test2.csv, scenario: AP42, controller: "P1-LC", start: "2022-08-17 10:36:02", end: "2022-08-17 10:38:15", target_points: [P1_LCV01D, P1_LIT01, P1_FT01], observable_tags: [P1_LCV01D, P1_LCV01Z, P1_LIT01, P1_FT01, P1_FT01Z]}
+  - {attack_id: A209, file: hai-test2.csv, scenario: AP23, controller: "P1-CC", start: "2022-08-17 11:35:05", end: "2022-08-17 11:36:30", target_points: [P1_PP04], observable_tags: [P1_PP04, P1_PP04D]}
+  - {attack_id: A210, file: hai-test2.csv, scenario: AP23, controller: "P1-CC", start: "2022-08-17 12:25:05", end: "2022-08-17 12:26:33", target_points: [P1_PP04], observable_tags: [P1_PP04, P1_PP04D]}
+  - {attack_id: A211, file: hai-test2.csv, scenario: AP46, controller: "P1-CC", start: "2022-08-17 13:47:05", end: "2022-08-17 13:50:29", target_points: [P1_PP04, P1_TIT03], observable_tags: [P1_PP04, P1_PP04D, P1_TIT03]}
+  - {attack_id: A212, file: hai-test2.csv, scenario: AP24, controller: "P1-CC", start: "2022-08-17 14:25:04", end: "2022-08-17 14:27:11", target_points: [P1_PP04], observable_tags: [P1_PP04, P1_PP04D]}
+  - {attack_id: A213, file: hai-test2.csv, scenario: AP25, controller: "P1-CC", start: "2022-08-17 15:13:01", end: "2022-08-17 15:22:00", target_points: [P1_PP04_SP], observable_tags: [P1_PP04SP, P1_PP04, P1_PP04D]}
+  - {attack_id: A214, file: hai-test2.csv, scenario: AP19, controller: "P1-TC", start: "2022-08-17 17:34:04", end: "2022-08-17 17:35:05", target_points: [P1_FCV01D], observable_tags: [P1_FCV01D, P1_FCV01Z]}
+  - {attack_id: A215, file: hai-test2.csv, scenario: AP20, controller: "P1-TC", start: "2022-08-17 18:16:04", end: "2022-08-17 18:18:31", target_points: [P1_FCV01D, P1_TIT01], observable_tags: [P1_FCV01D, P1_FCV01Z, P1_TIT01]}
+  - {attack_id: A216, file: hai-test2.csv, scenario: AP21, controller: "P1-TC", start: "2022-08-17 19:40:03", end: "2022-08-17 19:41:38", target_points: [P1_FCV01D], observable_tags: [P1_FCV01D, P1_FCV01Z]}
+  - {attack_id: A217, file: hai-test2.csv, scenario: AP22, controller: "P1-TC", start: "2022-08-17 20:12:03", end: "2022-08-17 20:20:28", target_points: [P1_B4002], observable_tags: [x1003_24_SUM_OUT, P1_FCV01D, P1_FCV01Z, P1_FCV02D, P1_FCV02Z, P1_TIT01]}
+  - {attack_id: A218, file: hai-test2.csv, scenario: AP07, controller: "P1-PC", start: "2022-08-17 22:41:01", end: "2022-08-17 22:44:35", target_points: [P1_PCV01D], observable_tags: [P1_PCV01D, P1_PCV01Z]}
+  - {attack_id: A219, file: hai-test2.csv, scenario: AP13, controller: "P1-FC", start: "2022-08-17 23:38:04", end: "2022-08-17 23:40:15", target_points: [P1_FCV03D], observable_tags: [P1_FCV03D, P1_FCV03Z]}
+  - {attack_id: A220, file: hai-test2.csv, scenario: AE03, controller: "P1-LC", start: "2022-08-18 13:48:03", end: "2022-08-18 13:50:14", target_points: ["1002-14-AVALGEN.R1"], observable_tags: [P1_LCV01D, P1_LCV01Z], confidence: low, note: "internal point; affects LCV01 initialization"}
+  - {attack_id: A221, file: hai-test2.csv, scenario: AE08, controller: "P1-HC", start: "2022-08-18 14:58:52", end: "2022-08-18 15:00:14", target_points: ["1004-21-LOWMON.R1"], observable_tags: [P1_TIT02, P1_TIT03, P1_STSP], confidence: low, note: "internal point; heater low-threshold monitor"}
+  - {attack_id: A222, file: hai-test2.csv, scenario: AE01, controller: "P1-PC", start: "2022-08-18 16:20:20", end: "2022-08-18 16:23:51", target_points: ["1001-09-AVALGEN.R1"], observable_tags: [P1_PCV01D, P1_PCV01Z], confidence: low, note: "internal point; affects PCV01 initialization"}
+  - {attack_id: A223, file: hai-test2.csv, scenario: AE07, controller: "P1-CC", start: "2022-08-18 17:38:10", end: "2022-08-18 17:39:29", target_points: ["1020-15-FUNCTION.S4"], observable_tags: [P1_PP04, P1_PP04D], confidence: low, note: "internal point; PP04 command minimum"}
+  - {attack_id: A224, file: hai-test2.csv, scenario: "AP14+AP26", controller: "P1-LC+P2-SC", start: "2022-08-18 18:45:06", end: "2022-08-18 18:46:53", target_points: [P1_B3004, P2_AutoSD], observable_tags: [x1002_07_SETPOINT_OUT, x1002_08_SETPOINT_OUT, P1_LCV01D, P1_LCV01Z, P1_LIT01, P2_AutoSD, P2_SCO, P2_SIT01]}
+  - {attack_id: A225, file: hai-test2.csv, scenario: "AP16+AP32", controller: "P1-LC+P2-TC", start: "2022-08-18 19:21:01", end: "2022-08-18 19:22:01", target_points: [P1_LCV01D, P2_VTR01], observable_tags: [P1_LCV01D, P1_LCV01Z, P2_VTR01]}
+  - {attack_id: A226, file: hai-test2.csv, scenario: "AP04+AP11", controller: "P1-PC+P1-FC", start: "2022-08-18 20:32:09", end: "2022-08-18 20:34:07", target_points: [P1_PCV01D, P1_FCV03D], observable_tags: [P1_PCV01D, P1_PCV01Z, P1_FCV03D, P1_FCV03Z]}
+  - {attack_id: A227, file: hai-test2.csv, scenario: "AP09+AP14", controller: "P1-FC+P1-LC", start: "2022-08-18 21:41:02", end: "2022-08-18 21:43:14", target_points: [P1_B3005, P1_FT03, P1_B3004], observable_tags: [x1003_10_SETPOINT_OUT, P1_FCV03D, P1_FCV03Z, P1_FT03, P1_FT03Z, x1002_07_SETPOINT_OUT, P1_LCV01D, P1_LCV01Z, P1_LIT01]}
+  - {attack_id: A228, file: hai-test2.csv, scenario: "AP05+AP30", controller: "P1-PC+P2-SC", start: "2022-08-18 23:15:01", end: "2022-08-18 23:17:36", target_points: [P1_PCV01D, P1_PIT01, P2_SCO, P2_SIT01], observable_tags: [P1_PCV01D, P1_PCV01Z, P1_PIT01, P2_SCO, P2_SIT01]}
+  - {attack_id: A229, file: hai-test2.csv, scenario: "AP45+AP01", controller: "P1-TC+P1-PC", start: "2022-08-19 01:23:04", end: "2022-08-19 01:24:59", target_points: [P1_B4002, P1_B2016], observable_tags: [x1003_24_SUM_OUT, P1_FCV01D, P1_FCV01Z, P1_TIT01, x1001_05_SETPOINT_OUT, P1_PCV01D, P1_PCV01Z, P1_PIT01]}
+  - {attack_id: A230, file: hai-test2.csv, scenario: "AP19+AP02", controller: "P1-TC+P1-PC", start: "2022-08-19 02:43:01", end: "2022-08-19 02:45:35", target_points: [P1_FCV01D, P1_B2016, P1_PIT01], observable_tags: [P1_FCV01D, P1_FCV01Z, x1001_05_SETPOINT_OUT, P1_PCV01D, P1_PCV01Z, P1_PIT01]}
+  - {attack_id: A231, file: hai-test2.csv, scenario: "AP08+AP35", controller: "P1-FC+P3-LC", start: "2022-08-19 04:34:01", end: "2022-08-19 04:35:36", target_points: [P1_B3005, P3_LCP01D], observable_tags: [x1003_10_SETPOINT_OUT, P1_FCV03D, P1_FCV03Z, P1_FT03, P1_FT03Z, P3_LCP01D, P3_LIT01]}
+  - {attack_id: A232, file: hai-test2.csv, scenario: "AP45+AP27", controller: "P1-TC+P2-SC", start: "2022-08-19 05:14:02", end: "2022-08-19 05:16:35", target_points: [P1_B4002, P2_AutoSD, P2_SIT01], observable_tags: [x1003_24_SUM_OUT, P1_FCV01D, P1_FCV01Z, P1_TIT01, P2_AutoSD, P2_SCO, P2_SIT01]}
+  - {attack_id: A233, file: hai-test2.csv, scenario: "AP44+AP47", controller: "P1-LC+P2-TC", start: "2022-08-19 06:46:01", end: "2022-08-19 07:20:12", target_points: [P1_LCV01D, P1_LIT01, P2_VTR02], observable_tags: [P1_LCV01D, P1_LCV01Z, P1_LIT01, P2_VTR02]}
+  - {attack_id: A234, file: hai-test2.csv, scenario: AP25, controller: "P1-CC", start: "2022-08-19 08:24:01", end: "2022-08-19 08:32:50", target_points: [P1_PP04_SP], observable_tags: [P1_PP04SP, P1_PP04D, P1_PP04]}
+  - {attack_id: A235, file: hai-test2.csv, scenario: AE05, controller: "P1-TC", start: "2022-08-19 09:27:33", end: "2022-08-19 09:28:59", target_points: ["1003-05-FUNCTION.T9"], observable_tags: [P1_FCV01D, P1_FCV01Z, P1_FCV02D, P1_FCV02Z], confidence: low, note: "internal point; PV scale"}
+  - {attack_id: A236, file: hai-test2.csv, scenario: AE06, controller: "P1-TC", start: "2022-08-19 10:34:00", end: "2022-08-19 10:35:59", target_points: ["OCB0004018.T6"], observable_tags: [P1_FT02, P1_FT02Z], confidence: low, note: "internal point; FT02 scale"}
+  - {attack_id: A237, file: hai-test2.csv, scenario: AE05, controller: "P1-PC", start: "2022-08-19 14:18:00", end: "2022-08-19 14:21:09", target_points: ["OCB0002006.S5"], observable_tags: [P1_PCV01D, P1_PCV01Z], confidence: low, note: "internal point; PCV01 command scale"}
+  - {attack_id: A238, file: hai-test2.csv, scenario: AE06, controller: "P1-LC", start: "2022-08-19 14:51:00", end: "2022-08-19 14:53:02", target_points: ["1002-31-FUNCTION.S5"], observable_tags: [P1_LCV01D, P1_LCV01Z], confidence: low, note: "internal point; LCV01 command scale"}

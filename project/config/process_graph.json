@@ -1,0 +1,923 @@
+{
+  "schema_version": "1.0",
+  "dataset_version": "HAI-23.05",
+  "graph_version": "process_graph_v1",
+  "nodes": [
+    {
+      "id": "P1_FCV01D",
+      "process": "P1_boiler",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P1_FCV01Z",
+      "process": "P1_boiler",
+      "kind": "feedback",
+      "discrete": false
+    },
+    {
+      "id": "P1_FCV02D",
+      "process": "P1_boiler",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P1_FCV02Z",
+      "process": "P1_boiler",
+      "kind": "feedback",
+      "discrete": false
+    },
+    {
+      "id": "P1_FCV03D",
+      "process": "P1_boiler",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P1_FCV03Z",
+      "process": "P1_boiler",
+      "kind": "feedback",
+      "discrete": false
+    },
+    {
+      "id": "P1_FT01",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P1_FT01Z",
+      "process": "P1_boiler",
+      "kind": "feedback",
+      "discrete": false
+    },
+    {
+      "id": "P1_FT02",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P1_FT02Z",
+      "process": "P1_boiler",
+      "kind": "feedback",
+      "discrete": false
+    },
+    {
+      "id": "P1_FT03",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P1_FT03Z",
+      "process": "P1_boiler",
+      "kind": "feedback",
+      "discrete": false
+    },
+    {
+      "id": "P1_LCV01D",
+      "process": "P1_boiler",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P1_LCV01Z",
+      "process": "P1_boiler",
+      "kind": "feedback",
+      "discrete": false
+    },
+    {
+      "id": "P1_LIT01",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P1_PCV01D",
+      "process": "P1_boiler",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P1_PCV01Z",
+      "process": "P1_boiler",
+      "kind": "feedback",
+      "discrete": false
+    },
+    {
+      "id": "P1_PCV02D",
+      "process": "P1_boiler",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P1_PCV02Z",
+      "process": "P1_boiler",
+      "kind": "feedback",
+      "discrete": false
+    },
+    {
+      "id": "P1_PIT01",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P1_PIT01_HH",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P1_PIT02",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P1_PP01AD",
+      "process": "P1_boiler",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P1_PP01AR",
+      "process": "P1_boiler",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P1_PP01BD",
+      "process": "P1_boiler",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P1_PP01BR",
+      "process": "P1_boiler",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P1_PP02D",
+      "process": "P1_boiler",
+      "kind": "command",
+      "discrete": true
+    },
+    {
+      "id": "P1_PP02R",
+      "process": "P1_boiler",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P1_PP04",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P1_PP04D",
+      "process": "P1_boiler",
+      "kind": "command",
+      "discrete": true
+    },
+    {
+      "id": "P1_PP04SP",
+      "process": "P1_boiler",
+      "kind": "setpoint",
+      "discrete": false
+    },
+    {
+      "id": "P1_SOL01D",
+      "process": "P1_boiler",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P1_SOL03D",
+      "process": "P1_boiler",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P1_STSP",
+      "process": "P1_boiler",
+      "kind": "setpoint",
+      "discrete": true
+    },
+    {
+      "id": "P1_TIT01",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P1_TIT02",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P1_TIT03",
+      "process": "P1_boiler",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_24Vdc",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_ATSW_Lamp",
+      "process": "P2_turbine",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P2_AutoGO",
+      "process": "P2_turbine",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P2_AutoSD",
+      "process": "P2_turbine",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P2_Emerg",
+      "process": "P2_turbine",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P2_MASW",
+      "process": "P2_turbine",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P2_MASW_Lamp",
+      "process": "P2_turbine",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P2_ManualGO",
+      "process": "P2_turbine",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P2_ManualSD",
+      "process": "P2_turbine",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P2_OnOff",
+      "process": "P2_turbine",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P2_RTR",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_SCO",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_SCST",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_SIT01",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_TripEx",
+      "process": "P2_turbine",
+      "kind": "status",
+      "discrete": true
+    },
+    {
+      "id": "P2_VIBTR01",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_VIBTR02",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_VIBTR03",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_VIBTR04",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_VT01",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_VTR01",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_VTR02",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_VTR03",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P2_VTR04",
+      "process": "P2_turbine",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P3_FIT01",
+      "process": "P3_water",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P3_LCP01D",
+      "process": "P3_water",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P3_LCV01D",
+      "process": "P3_water",
+      "kind": "command",
+      "discrete": false
+    },
+    {
+      "id": "P3_LH01",
+      "process": "P3_water",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P3_LIT01",
+      "process": "P3_water",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P3_LL01",
+      "process": "P3_water",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P3_PIT01",
+      "process": "P3_water",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_HT_FD",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_HT_PO",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_HT_PS",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_LD",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_ST_FD",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_ST_GOV",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_ST_LD",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_ST_PO",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_ST_PS",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_ST_PT01",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "P4_ST_TT01",
+      "process": "P4_hil",
+      "kind": "measurement",
+      "discrete": false
+    },
+    {
+      "id": "x1001_05_SETPOINT_OUT",
+      "process": "DCS_internal",
+      "kind": "controller_output",
+      "discrete": false
+    },
+    {
+      "id": "x1001_15_ASSIGN_OUT",
+      "process": "DCS_internal",
+      "kind": "controller_output",
+      "discrete": false
+    },
+    {
+      "id": "x1002_07_SETPOINT_OUT",
+      "process": "DCS_internal",
+      "kind": "controller_output",
+      "discrete": false
+    },
+    {
+      "id": "x1002_08_SETPOINT_OUT",
+      "process": "DCS_internal",
+      "kind": "controller_output",
+      "discrete": false
+    },
+    {
+      "id": "x1003_10_SETPOINT_OUT",
+      "process": "DCS_internal",
+      "kind": "controller_output",
+      "discrete": false
+    },
+    {
+      "id": "x1003_18_SETPOINT_OUT",
+      "process": "DCS_internal",
+      "kind": "controller_output",
+      "discrete": false
+    },
+    {
+      "id": "x1003_24_SUM_OUT",
+      "process": "DCS_internal",
+      "kind": "controller_output",
+      "discrete": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "x1001_05_SETPOINT_OUT",
+      "target": "P1_PCV01D",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "x1001_05_SETPOINT_OUT",
+      "target": "P1_PCV02D",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_PCV01Z",
+      "target": "P1_PIT01",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_PCV02Z",
+      "target": "P1_PIT01",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "x1002_07_SETPOINT_OUT",
+      "target": "P1_LCV01D",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "x1002_08_SETPOINT_OUT",
+      "target": "P1_LCV01D",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_LCV01Z",
+      "target": "P1_LIT01",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_FCV03D",
+      "target": "P1_LIT01",
+      "relation": "feedforward",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_FT03",
+      "target": "P1_LCV01D",
+      "relation": "ff_disturbance",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "x1003_10_SETPOINT_OUT",
+      "target": "P1_FCV03D",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "x1003_18_SETPOINT_OUT",
+      "target": "P1_FCV03D",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_FCV03Z",
+      "target": "P1_FT03",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "x1003_24_SUM_OUT",
+      "target": "P1_FCV01D",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "x1003_24_SUM_OUT",
+      "target": "P1_FCV02D",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_FT02",
+      "target": "P1_FCV01D",
+      "relation": "ff_cascade",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_FT02",
+      "target": "P1_FCV02D",
+      "relation": "ff_cascade",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_FCV01Z",
+      "target": "P1_FT02",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_FCV02Z",
+      "target": "P1_TIT01",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_PP04SP",
+      "target": "P1_PP04D",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_PP04D",
+      "target": "P1_PP04",
+      "relation": "cmd_to_state",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_PP04",
+      "target": "P1_TIT02",
+      "relation": "cooling_effect",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_PP04",
+      "target": "P1_TIT03",
+      "relation": "cooling_effect",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_AutoSD",
+      "target": "P2_SCO",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_ManualSD",
+      "target": "P2_SCO",
+      "relation": "sp_to_cv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_SCO",
+      "target": "P2_SIT01",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_SIT01",
+      "target": "P2_VIBTR01",
+      "relation": "pv_to_vibration",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_SIT01",
+      "target": "P2_VIBTR02",
+      "relation": "pv_to_vibration",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_SIT01",
+      "target": "P2_VIBTR03",
+      "relation": "pv_to_vibration",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_SIT01",
+      "target": "P2_VIBTR04",
+      "relation": "pv_to_vibration",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_VTR01",
+      "target": "P2_RTR",
+      "relation": "trip_logic",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_VTR02",
+      "target": "P2_RTR",
+      "relation": "trip_logic",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_VTR03",
+      "target": "P2_RTR",
+      "relation": "trip_logic",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P2_VTR04",
+      "target": "P2_RTR",
+      "relation": "trip_logic",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P3_LCP01D",
+      "target": "P3_FIT01",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P3_LCP01D",
+      "target": "P3_LIT01",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P3_LCV01D",
+      "target": "P3_LIT01",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P3_LCV01D",
+      "target": "P3_FIT01",
+      "relation": "cv_to_pv",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P3_LIT01",
+      "target": "P3_LH01",
+      "relation": "pv_to_switch",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P3_LIT01",
+      "target": "P3_LL01",
+      "relation": "pv_to_switch",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P3_FIT01",
+      "target": "P3_PIT01",
+      "relation": "flow_to_pressure",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_PIT01",
+      "target": "P4_ST_PT01",
+      "relation": "steam_pressure_in",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_TIT01",
+      "target": "P4_ST_TT01",
+      "relation": "steam_temp_in",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P4_ST_PS",
+      "target": "P4_ST_PO",
+      "relation": "power_setpoint",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P4_ST_GOV",
+      "target": "P4_ST_PO",
+      "relation": "governor",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P4_ST_PO",
+      "target": "P4_ST_FD",
+      "relation": "load_to_freq",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P4_ST_LD",
+      "target": "P4_ST_FD",
+      "relation": "load_to_freq",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P3_LIT01",
+      "target": "P4_HT_PS",
+      "relation": "hydro_level_in",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P3_FIT01",
+      "target": "P4_HT_PO",
+      "relation": "hydro_flow_in",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P4_HT_PS",
+      "target": "P4_HT_PO",
+      "relation": "power_setpoint",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P4_LD",
+      "target": "P4_HT_FD",
+      "relation": "load_to_freq",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P4_HT_PO",
+      "target": "P4_HT_FD",
+      "relation": "gen_to_freq",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P4_ST_FD",
+      "target": "P2_SIT01",
+      "relation": "speed_sync",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P4_ST_PO",
+      "target": "P2_SCO",
+      "relation": "power_to_speed_demand",
+      "evidence": "manual_fig4-8",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_PP01AD",
+      "target": "P1_PP01AR",
+      "relation": "cmd_to_state",
+      "evidence": "name_convention",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_PP01BD",
+      "target": "P1_PP01BR",
+      "relation": "cmd_to_state",
+      "evidence": "name_convention",
+      "confidence": "high"
+    },
+    {
+      "source": "P1_PP02D",
+      "target": "P1_PP02R",
+      "relation": "cmd_to_state",
+      "evidence": "name_convention",
+      "confidence": "high"
+    }
+  ],
+  "boiler_device_graph": {
+    "nodes": 41,
+    "links": 67,
+    "file": "/Users/Liang/Downloads/Liangchengxin/AnomalyDetection/project/data/raw/graph/boiler/phy_boiler.json"
+  },
+  "notes": "Tag-level edges carry documented evidence. The boiler device graph (official NetworkX data) is stored for context; it is device-level, not tag-level."
+}

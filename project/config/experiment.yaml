@@ -1,0 +1,130 @@
+# Experiment configuration for the HAI 23.05 anomaly-perception and
+# shadow-decision pipeline. All tuneable protocol values live here so a
+# single config reproduces a run (see scripts/reproduce_all.py).
+
+schema_version: "1.0"
+dataset_version: "HAI-23.05"
+
+seed: 1
+
+paths:
+  raw_dir: "data/raw/hai-23.05"
+  graph_dir: "data/raw/graph/boiler"
+  processed_dir: "data/processed"
+  artifacts_dir: "artifacts"
+  checkpoint_dir: "checkpoints"
+  reports_dir: "reports"
+  figures_dir: "figures"
+  manifest: "data/raw_manifest.json"
+  tag_schema: "config/tag_schema.yaml"
+  process_graph: "config/process_graph.json"
+  action_catalog: "config/action_catalog.yaml"
+  attack_targets: "config/attack_targets_hai2305.yaml"
+
+# File-level split. Labels never reach the model; windows never cross
+# file or split boundaries.
+data:
+  train_files: ["hai-train1.csv", "hai-train2.csv", "hai-train3.csv"]
+  val_files: ["hai-train4.csv"]
+  test_files: ["hai-test1.csv", "hai-test2.csv"]
+  label_files:
+    hai-test1.csv: "label-test1.csv"
+    hai-test2.csv: "label-test2.csv"
+  summary_files:
+    hai-test1.csv: "summary_label1.txt"
+    hai-test2.csv: "summary_label2.txt"
+  timestamp_col: "timestamp"
+  label_col: "label"
+
+window:
+  length: 128          # W, seconds at 1 Hz
+  stride: 1            # S, seconds between consecutive windows
+  batch_stride: 5      # stride used by the streaming replay prototype
+  pad_mode: "replicate"  # segment-start padding, same as upstream TranAD
+  max_windows_per_segment: 0  # 0 = no cap (testing only)
+
+scaler:
+  # continuous tags: z-score with train stats; discrete tags: 0/1 passthrough
+  residual_scale: "std"     # std | mad  for per-channel residual scale s_j
+  clip_z: 10.0
+
+model:
+  name: "TranAD_C_G_E"     # improved TranAD; "TranAD" selects the base model
+  n_window: 128            # must equal window.length
+  lr: 0.0001
+  weight_decay: 0.00001
+  lr_step: 5
+  lr_gamma: 0.9
+  epochs: 10
+  batch_size: 128
+  score_agg: "topk"        # mean | max | p95 | topk
+  score_topk: 3
+  aux_weight: 1.0
+  assoc_weight: 0.01
+  memory_weight: 0.001
+
+threshold:
+  # Locked on validation-normal scores only. Never tuned on test labels.
+  method: "quantile"       # quantile | far_per_hour
+  quantile: 0.999
+  far_per_hour: 0.5        # used when method=far_per_hour
+
+detection:
+  min_event_gap_s: 3       # merge alert samples closer than this into events
+  hysteresis: 0.0          # second, lower threshold for event continuation
+
+attribution:
+  method: "input_gradient" # input_gradient | occlusion | smoothgrad
+  smoothgrad_samples: 8
+  smoothgrad_noise: 0.1
+  occlusion_fill: "train_median"
+  max_events: 200          # cap attribution cost per run
+
+rootcause:
+  # Fixed normalized fusion weights; documented, not fitted on test labels.
+  weights:
+    residual: 0.30
+    attribution: 0.25
+    onset: 0.15
+    graph: 0.20
+    stability: 0.10
+  graph_hops: 2
+  onset_quantile: 0.95     # channel "starts" when residual exceeds this val-q
+  abstain_margin: 0.05     # min gap between top-1 and top-2 fused score
+  noise_std: 0.05          # rank-stability perturbation
+  noise_repeats: 4
+
+policy:
+  horizon: 5               # short-horizon rollout steps (seconds)
+  lambda_risk: 1.0
+  lambda_move: 0.1
+  lambda_cost: 0.05
+  max_actions_per_step: 1
+  abstain:
+    rc_confidence_min: 0.30
+    surrogate_uncertainty_max: "high"   # low | medium | high
+    risk_gain_min: 0.0
+  risk:
+    # risk = w_range*frac(out of range) + w_z*mean_z + w_uncert
+    w_range: 0.5
+    w_z: 0.4
+    w_uncert: 0.1
+
+surrogate:
+  model: "ridge"           # per-tag one-step ridge regression
+  alpha: 1.0
+  fit_max_rows: 200000
+  val_coverage_z: 2.0
+  gate:
+    max_rmse_ratio: 1.5    # surrogate RMSE <= ratio * tag std on val
+    min_coverage: 0.80     # fraction of val residuals inside +-2s band
+
+eval:
+  etapr_theta_p: 0.7
+  etapr_theta_r: 0.1
+  etapr_delta: 0.0
+  bootstrap_samples: 1000
+  bootstrap_alpha: 0.05
+  rca_topk: [1, 3]
+
+device: "auto"             # auto | cuda | mps | cpu
