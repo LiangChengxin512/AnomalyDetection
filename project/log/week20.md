@@ -76,3 +76,14 @@ asynchronous display and live factory adapters remain application extensions.
 Use `docs/PLATFORM_GUIDE.md` for installation, training-only, complete experiment,
 resume, application and redraw commands on all three platforms. No full-benchmark
 or three-platform completion is claimed by this milestone log.
+
+## Windows recovery follow-up — 2026-11-18
+
+The user supplied a real Windows CUDA full-run log. All six neural fits completed;
+B01_seed_1 then failed with a cuBLAS error and subsequent GPU stages reported
+illegal memory accesses. Full acceptance is still incomplete. Added a separate
+--replay-physical-batch-size option so downstream attribution batches can be
+reduced to 48 while retaining the original 128 training contract and authenticated
+fit/score reuse. Recovery instructions and diagnostic limits are documented in
+docs/WINDOWS_RECOVERY.md. Replay stages restart at task boundaries; no row-level
+recovery is claimed.

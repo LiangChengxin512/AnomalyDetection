@@ -1,0 +1,6 @@
+# Python 3.10 or 3.11. Training, experiments, and application dependencies.
+# Install with: python -m pip install -r requirements.txt
+# For CUDA, install the appropriate PyTorch 2.2.2 wheel first; see
+# docs/PLATFORM_GUIDE.md for macOS MPS, Linux CUDA, and Windows CUDA setup.
+-r requirements/base.txt
+-r requirements/app.txt

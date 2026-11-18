@@ -20,6 +20,7 @@ def parser():
     p.add_argument('--device',choices=['auto','cpu','mps','cuda']);p.add_argument('--seeds')
     p.add_argument('--max-epochs',type=int);p.add_argument('--epochs',type=int);p.add_argument('--patience',type=int)
     p.add_argument('--min-delta-abs',type=float);p.add_argument('--physical-batch-size',type=int)
+    p.add_argument('--replay-physical-batch-size',type=int,help='Override downstream attribution batches without changing the training contract')
     p.add_argument('--models',help='Comma-separated detector IDs or model names');p.add_argument('--experiments',help='Comma-separated D/R/P/B/N experiment IDs')
     p.add_argument('--run-id');p.add_argument('--resume',action='store_true');p.add_argument('--train-only',action='store_true')
     p.add_argument('--skip-train',action='store_true');p.add_argument('--checkpoint-manifest')
@@ -34,6 +35,7 @@ def parser():
 
 def main(argv=None):
     args=parser().parse_args(argv)
+    if args.replay_physical_batch_size is not None and args.replay_physical_batch_size<1:raise ValueError('Replay physical batch size must be positive')
     if args.mock:raise ValueError('The continuation pipeline requires real data/models. Historical MOCK artifacts are not accepted.')
     if args.epochs is not None:
         if args.max_epochs is not None and args.max_epochs!=args.epochs:raise ValueError('--epochs and --max-epochs disagree')
@@ -85,6 +87,7 @@ def main(argv=None):
     root=PROJECT/'runs'/run_id
     resolved=dict(config=cfg,site=site,suite=suite,seeds=seeds,models=models,experiments=sorted(experiments) if experiments else None,
                   smoke_rows=smoke_rows,smoke_replay_rows=args.smoke_replay_rows,train_only=args.train_only,export_bundle=args.export_bundle)
+    if args.replay_physical_batch_size is not None:resolved['replay_physical_batch_size']=args.replay_physical_batch_size
     if args.dry_run:
         print(yaml.safe_dump(resolved,sort_keys=False));return 0
     if root.exists() and not args.resume:raise FileExistsError(f'{root} exists; use --resume or a new --run-id')
@@ -162,6 +165,14 @@ def main(argv=None):
                 detection_outputs[(model_id,seed)]=det
         surrogate=tasks.run('surrogate',['prepare'],Path('surrogate'),dict(config=cfg['surrogate'],code=src('src/sim')),
                             lambda out:fit_surrogates(prepared,out,site,cfg)) if not args.train_only else None
+        # Keep completed fit/score task keys unchanged. This override applies only
+        # after training, scoring and surrogate fitting have been dispatched.
+        if args.replay_physical_batch_size is not None:
+            cfg=copy.deepcopy(cfg)
+            cfg['training']['physical_batch_size']=args.replay_physical_batch_size
+            cfg['attribution']['replay_physical_batch_size']=args.replay_physical_batch_size
+            write_json(root/'replay_execution.json',dict(physical_batch_size=args.replay_physical_batch_size,
+                training_physical_batch_size=resolved['config']['training']['physical_batch_size']))
         if not args.train_only and 'D07' in models and site['data'].get('replay_files'):
             for seed in seeds:
                 fitted=fit_outputs[('D07',seed)];scored=score_outputs[('D07',seed)]
