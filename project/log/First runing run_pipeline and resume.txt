@@ -1,0 +1,518 @@
+(Anomaly) PS C:\Users\ShenYang\Downloads\Liangchengxin\AnomalyDetection\project> scripts\run_pipeline.bat --suite full --device cuda --physical-batch-size 128 --run-id hai_full_windows --export-bundle
+Pipeline error: Site train_files: C:\Users\ShenYang\Downloads\Liangchengxin\AnomalyDetection\project\data\raw\hai-23.05\hai-train1.csv
+(Anomaly) PS C:\Users\ShenYang\Downloads\Liangchengxin\AnomalyDetection\project> scripts\run_pipeline.bat --suite full --device cuda --physical-batch-size 128 --run-id hai_full_windows --export-bundle
+Pipeline error: C:\Users\ShenYang\Downloads\Liangchengxin\AnomalyDetection\project\runs\hai_full_windows exists; use --resume or a new --run-id
+(Anomaly) PS C:\Users\ShenYang\Downloads\Liangchengxin\AnomalyDetection\project> scripts\run_pipeline.bat --suite full --device cuda --physical-batch-size 128 --run-id hai_full_windows --export-bundle
+[prepare] running -> shared\5e26948fb07b4b13
+[evaluation_labels] running -> evaluation
+[fit_D01_seed_deterministic] running -> models\D01\seed_deterministic
+[score_D01_seed_deterministic] running -> scores\D01_seed_deterministic
+[detect_D01_seed_deterministic] running -> experiments\D01\seed_None
+[fit_D02_seed_deterministic] running -> models\D02\seed_deterministic
+[score_D02_seed_deterministic] running -> scores\D02_seed_deterministic
+[detect_D02_seed_deterministic] running -> experiments\D02\seed_None
+[fit_D03_seed_1] running -> models\D03\seed_1
+[score_D03_seed_1] running -> scores\D03_seed_1
+[detect_D03_seed_1] running -> experiments\D03\seed_1
+[fit_D03_seed_7] running -> models\D03\seed_7
+[score_D03_seed_7] running -> scores\D03_seed_7
+[detect_D03_seed_7] running -> experiments\D03\seed_7
+[fit_D03_seed_21] running -> models\D03\seed_21
+[score_D03_seed_21] running -> scores\D03_seed_21
+[detect_D03_seed_21] running -> experiments\D03\seed_21
+[fit_D04_seed_1] running -> models\D04\seed_1
+[score_D04_seed_1] running -> scores\D04_seed_1
+[detect_D04_seed_1] running -> experiments\D04\seed_1
+[fit_D04_seed_7] running -> models\D04\seed_7
+[score_D04_seed_7] running -> scores\D04_seed_7
+[detect_D04_seed_7] running -> experiments\D04\seed_7
+[fit_D04_seed_21] running -> models\D04\seed_21
+[score_D04_seed_21] running -> scores\D04_seed_21
+[detect_D04_seed_21] running -> experiments\D04\seed_21
+[fit_D05_seed_1] running -> models\D05\seed_1
+[score_D05_seed_1] running -> scores\D05_seed_1
+[detect_D05_seed_1] running -> experiments\D05\seed_1
+[fit_D05_seed_7] running -> models\D05\seed_7
+[score_D05_seed_7] running -> scores\D05_seed_7
+[detect_D05_seed_7] running -> experiments\D05\seed_7
+[fit_D05_seed_21] running -> models\D05\seed_21
+[score_D05_seed_21] running -> scores\D05_seed_21
+[detect_D05_seed_21] running -> experiments\D05\seed_21
+[fit_D06_seed_1] running -> models\D06\seed_1
+[TranAD/seed=1] epoch=1 val=0.136844 bad_epochs=0 seconds=797.76
+[TranAD/seed=1] epoch=2 val=0.000724466 bad_epochs=0 seconds=811.13
+[TranAD/seed=1] epoch=3 val=0.000618106 bad_epochs=0 seconds=792.71
+[TranAD/seed=1] epoch=4 val=0.000550181 bad_epochs=0 seconds=780.09
+[TranAD/seed=1] epoch=5 val=0.000491163 bad_epochs=0 seconds=775.25
+[TranAD/seed=1] epoch=6 val=0.000522193 bad_epochs=1 seconds=766.56
+[TranAD/seed=1] epoch=7 val=0.000544181 bad_epochs=2 seconds=767.76
+[TranAD/seed=1] epoch=8 val=0.000564258 bad_epochs=3 seconds=766.57
+[TranAD/seed=1] epoch=9 val=0.000493379 bad_epochs=4 seconds=766.40
+[TranAD/seed=1] epoch=10 val=0.000490995 bad_epochs=5 seconds=766.32
+[score_D06_seed_1] running -> scores\D06_seed_1
+[detect_D06_seed_1] running -> experiments\D06\seed_1
+[fit_D06_seed_7] running -> models\D06\seed_7
+[TranAD/seed=7] epoch=1 val=0.130107 bad_epochs=0 seconds=762.95
+[TranAD/seed=7] epoch=2 val=0.000784601 bad_epochs=0 seconds=767.48
+[TranAD/seed=7] epoch=3 val=0.00059068 bad_epochs=0 seconds=765.93
+[TranAD/seed=7] epoch=4 val=0.000592889 bad_epochs=1 seconds=766.31
+[TranAD/seed=7] epoch=5 val=0.000488348 bad_epochs=0 seconds=767.13
+[TranAD/seed=7] epoch=6 val=0.000443429 bad_epochs=0 seconds=766.83
+[TranAD/seed=7] epoch=7 val=0.000361808 bad_epochs=0 seconds=766.81
+[TranAD/seed=7] epoch=8 val=0.000338678 bad_epochs=0 seconds=767.36
+[TranAD/seed=7] epoch=9 val=0.000337342 bad_epochs=1 seconds=767.35
+[TranAD/seed=7] epoch=10 val=0.000329158 bad_epochs=2 seconds=767.03
+[TranAD/seed=7] epoch=11 val=0.000319577 bad_epochs=0 seconds=767.17
+[TranAD/seed=7] epoch=12 val=0.000303426 bad_epochs=0 seconds=767.81
+[TranAD/seed=7] epoch=13 val=0.000273474 bad_epochs=0 seconds=767.19
+[TranAD/seed=7] epoch=14 val=0.000267244 bad_epochs=1 seconds=766.91
+[TranAD/seed=7] epoch=15 val=0.000271639 bad_epochs=2 seconds=765.99
+[TranAD/seed=7] epoch=16 val=0.000264064 bad_epochs=3 seconds=765.48
+[TranAD/seed=7] epoch=17 val=0.000266892 bad_epochs=4 seconds=763.00
+[TranAD/seed=7] epoch=18 val=0.000305393 bad_epochs=5 seconds=761.74
+[score_D06_seed_7] running -> scores\D06_seed_7
+[detect_D06_seed_7] running -> experiments\D06\seed_7
+[fit_D06_seed_21] running -> models\D06\seed_21
+[TranAD/seed=21] epoch=1 val=0.118354 bad_epochs=0 seconds=758.39
+[TranAD/seed=21] epoch=2 val=0.000707159 bad_epochs=0 seconds=772.05
+[TranAD/seed=21] epoch=3 val=0.000545428 bad_epochs=0 seconds=803.93
+[TranAD/seed=21] epoch=4 val=0.000483289 bad_epochs=0 seconds=934.12
+[TranAD/seed=21] epoch=5 val=0.000463619 bad_epochs=0 seconds=1149.04
+[TranAD/seed=21] epoch=6 val=0.000463017 bad_epochs=1 seconds=1080.52
+[TranAD/seed=21] epoch=7 val=0.000455082 bad_epochs=2 seconds=1069.17
+[TranAD/seed=21] epoch=8 val=0.00042749 bad_epochs=0 seconds=1068.99
+[TranAD/seed=21] epoch=9 val=0.000381603 bad_epochs=0 seconds=1071.91
+[TranAD/seed=21] epoch=10 val=0.000380473 bad_epochs=1 seconds=1071.29
+[TranAD/seed=21] epoch=11 val=0.000358801 bad_epochs=0 seconds=1072.52
+[TranAD/seed=21] epoch=12 val=0.000341482 bad_epochs=0 seconds=1061.93
+[TranAD/seed=21] epoch=13 val=0.000341604 bad_epochs=1 seconds=1049.79
+[TranAD/seed=21] epoch=14 val=0.000337086 bad_epochs=2 seconds=1040.08
+[TranAD/seed=21] epoch=15 val=0.000344808 bad_epochs=3 seconds=1038.36
+[TranAD/seed=21] epoch=16 val=0.00033702 bad_epochs=4 seconds=1037.09
+[TranAD/seed=21] epoch=17 val=0.000328486 bad_epochs=0 seconds=865.27
+[TranAD/seed=21] epoch=18 val=0.000324275 bad_epochs=1 seconds=780.93
+[TranAD/seed=21] epoch=19 val=0.000309369 bad_epochs=0 seconds=784.45
+[TranAD/seed=21] epoch=20 val=0.000311131 bad_epochs=1 seconds=786.28
+[TranAD/seed=21] epoch=21 val=0.000304022 bad_epochs=2 seconds=787.79
+[TranAD/seed=21] epoch=22 val=0.00028991 bad_epochs=0 seconds=788.46
+[TranAD/seed=21] epoch=23 val=0.00031859 bad_epochs=1 seconds=788.56
+[TranAD/seed=21] epoch=24 val=0.000308783 bad_epochs=2 seconds=788.13
+[TranAD/seed=21] epoch=25 val=0.000288278 bad_epochs=3 seconds=787.40
+[TranAD/seed=21] epoch=26 val=0.000303019 bad_epochs=4 seconds=788.53
+[TranAD/seed=21] epoch=27 val=0.00030262 bad_epochs=5 seconds=788.81
+[score_D06_seed_21] running -> scores\D06_seed_21
+[detect_D06_seed_21] running -> experiments\D06\seed_21
+[fit_D07_seed_1] running -> models\D07\seed_1
+[TranAD_C_G_E/seed=1] epoch=1 val=0.0974385 bad_epochs=0 seconds=809.28
+[TranAD_C_G_E/seed=1] epoch=2 val=0.000891556 bad_epochs=0 seconds=814.88
+[TranAD_C_G_E/seed=1] epoch=3 val=0.000556858 bad_epochs=0 seconds=814.66
+[TranAD_C_G_E/seed=1] epoch=4 val=0.000446381 bad_epochs=0 seconds=814.12
+[TranAD_C_G_E/seed=1] epoch=5 val=0.000398897 bad_epochs=0 seconds=814.88
+[TranAD_C_G_E/seed=1] epoch=6 val=0.000386851 bad_epochs=0 seconds=815.69
+[TranAD_C_G_E/seed=1] epoch=7 val=0.000368592 bad_epochs=0 seconds=814.63
+[TranAD_C_G_E/seed=1] epoch=8 val=0.000334024 bad_epochs=0 seconds=815.08
+[TranAD_C_G_E/seed=1] epoch=9 val=0.00032109 bad_epochs=0 seconds=816.54
+[TranAD_C_G_E/seed=1] epoch=10 val=0.000298233 bad_epochs=0 seconds=817.38
+[TranAD_C_G_E/seed=1] epoch=11 val=0.000281857 bad_epochs=0 seconds=817.22
+[TranAD_C_G_E/seed=1] epoch=12 val=0.000272399 bad_epochs=1 seconds=816.74
+[TranAD_C_G_E/seed=1] epoch=13 val=0.000263804 bad_epochs=0 seconds=817.96
+[TranAD_C_G_E/seed=1] epoch=14 val=0.000258137 bad_epochs=1 seconds=817.47
+[TranAD_C_G_E/seed=1] epoch=15 val=0.000256677 bad_epochs=2 seconds=817.58
+[TranAD_C_G_E/seed=1] epoch=16 val=0.000247321 bad_epochs=0 seconds=817.64
+[TranAD_C_G_E/seed=1] epoch=17 val=0.000247699 bad_epochs=1 seconds=818.45
+[TranAD_C_G_E/seed=1] epoch=18 val=0.000250156 bad_epochs=2 seconds=818.90
+[TranAD_C_G_E/seed=1] epoch=19 val=0.000245738 bad_epochs=3 seconds=818.76
+[TranAD_C_G_E/seed=1] epoch=20 val=0.000244897 bad_epochs=4 seconds=818.74
+[TranAD_C_G_E/seed=1] epoch=21 val=0.000251054 bad_epochs=5 seconds=817.68
+[score_D07_seed_1] running -> scores\D07_seed_1
+[detect_D07_seed_1] running -> experiments\D07\seed_1
+[fit_D07_seed_7] running -> models\D07\seed_7
+[TranAD_C_G_E/seed=7] epoch=1 val=0.0988861 bad_epochs=0 seconds=815.73
+[TranAD_C_G_E/seed=7] epoch=2 val=0.000957538 bad_epochs=0 seconds=822.15
+[TranAD_C_G_E/seed=7] epoch=3 val=0.000540609 bad_epochs=0 seconds=822.12
+[TranAD_C_G_E/seed=7] epoch=4 val=0.000472075 bad_epochs=0 seconds=821.68
+[TranAD_C_G_E/seed=7] epoch=5 val=0.000442286 bad_epochs=0 seconds=821.80
+[TranAD_C_G_E/seed=7] epoch=6 val=0.000398558 bad_epochs=0 seconds=822.30
+[TranAD_C_G_E/seed=7] epoch=7 val=0.000374148 bad_epochs=0 seconds=822.47
+[TranAD_C_G_E/seed=7] epoch=8 val=0.000323209 bad_epochs=0 seconds=821.53
+[TranAD_C_G_E/seed=7] epoch=9 val=0.000287221 bad_epochs=0 seconds=823.75
+[TranAD_C_G_E/seed=7] epoch=10 val=0.000241225 bad_epochs=0 seconds=823.16
+[TranAD_C_G_E/seed=7] epoch=11 val=0.000245742 bad_epochs=1 seconds=823.09
+[TranAD_C_G_E/seed=7] epoch=12 val=0.000224671 bad_epochs=0 seconds=822.63
+[TranAD_C_G_E/seed=7] epoch=13 val=0.000220442 bad_epochs=1 seconds=822.45
+[TranAD_C_G_E/seed=7] epoch=14 val=0.000222943 bad_epochs=2 seconds=823.15
+[TranAD_C_G_E/seed=7] epoch=15 val=0.000220375 bad_epochs=3 seconds=822.68
+[TranAD_C_G_E/seed=7] epoch=16 val=0.000218828 bad_epochs=4 seconds=824.98
+[TranAD_C_G_E/seed=7] epoch=17 val=0.000217159 bad_epochs=5 seconds=824.08
+[score_D07_seed_7] running -> scores\D07_seed_7
+[detect_D07_seed_7] running -> experiments\D07\seed_7
+[fit_D07_seed_21] running -> models\D07\seed_21
+[TranAD_C_G_E/seed=21] epoch=1 val=0.156859 bad_epochs=0 seconds=819.70
+[TranAD_C_G_E/seed=21] epoch=2 val=0.00105036 bad_epochs=0 seconds=830.89
+[TranAD_C_G_E/seed=21] epoch=3 val=0.000630493 bad_epochs=0 seconds=828.95
+[TranAD_C_G_E/seed=21] epoch=4 val=0.000581887 bad_epochs=0 seconds=826.80
+[TranAD_C_G_E/seed=21] epoch=5 val=0.000538267 bad_epochs=0 seconds=827.81
+[TranAD_C_G_E/seed=21] epoch=6 val=0.000483079 bad_epochs=0 seconds=829.19
+[TranAD_C_G_E/seed=21] epoch=7 val=0.000428462 bad_epochs=0 seconds=829.90
+[TranAD_C_G_E/seed=21] epoch=8 val=0.000386599 bad_epochs=0 seconds=828.98
+[TranAD_C_G_E/seed=21] epoch=9 val=0.000319501 bad_epochs=0 seconds=826.44
+[TranAD_C_G_E/seed=21] epoch=10 val=0.000278478 bad_epochs=0 seconds=822.34
+[TranAD_C_G_E/seed=21] epoch=11 val=0.000253216 bad_epochs=0 seconds=822.13
+[TranAD_C_G_E/seed=21] epoch=12 val=0.000233226 bad_epochs=0 seconds=821.06
+[TranAD_C_G_E/seed=21] epoch=13 val=0.000232909 bad_epochs=1 seconds=821.96
+[TranAD_C_G_E/seed=21] epoch=14 val=0.000231642 bad_epochs=2 seconds=822.17
+[TranAD_C_G_E/seed=21] epoch=15 val=0.000233749 bad_epochs=3 seconds=822.00
+[TranAD_C_G_E/seed=21] epoch=16 val=0.000228494 bad_epochs=4 seconds=823.33
+[TranAD_C_G_E/seed=21] epoch=17 val=0.000236492 bad_epochs=5 seconds=821.75
+[score_D07_seed_21] running -> scores\D07_seed_21
+[detect_D07_seed_21] running -> experiments\D07\seed_21
+[surrogate] running -> surrogate
+[B00_seed_1] running -> experiments\B00\seed_1
+[B01_seed_1] running -> experiments\B01\seed_1
+[B01_seed_1] FAILED: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemmStridedBatched( handle, opa, opb, m, n, k, &alpha, a, lda, stridea, b, ldb, strideb, &beta, c, ldc, stridec, num_batches)`
+[B02_seed_1] running -> experiments\B02\seed_1
+[B02_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B03_seed_1] running -> experiments\B03\seed_1
+[B03_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B04_seed_1] running -> experiments\B04\seed_1
+[B04_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B05_seed_1] running -> experiments\B05\seed_1
+[B05_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B06_seed_1] running -> experiments\B06\seed_1
+[B06_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B07_seed_1] running -> experiments\B07\seed_1
+[B07_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P00_seed_1] running -> experiments\P00\seed_1
+[P00_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P01_seed_1] running -> experiments\P01\seed_1
+[P01_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P02_seed_1] running -> experiments\P02\seed_1
+[P02_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P03_seed_1] running -> experiments\P03\seed_1
+[P03_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[R01_seed_1] running -> experiments\R01\seed_1
+[R02_seed_1] running -> experiments\R02\seed_1
+[R03_seed_1] running -> experiments\R03\seed_1
+[R04_seed_1] running -> experiments\R04\seed_1
+[R05_seed_1] running -> experiments\R05\seed_1
+[N01_seed_1] running -> experiments\N01\seed_1
+[N01_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[N02_seed_1] running -> experiments\N02\seed_1
+[N03_seed_1] running -> experiments\N03\seed_1
+[N03_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[N04_seed_1] running -> experiments\N04\seed_1
+[N05_seed_1] running -> experiments\N05\seed_1
+[N05_seed_1] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B00_seed_7] running -> experiments\B00\seed_7
+[B00_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B01_seed_7] running -> experiments\B01\seed_7
+[B01_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B02_seed_7] running -> experiments\B02\seed_7
+[B02_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B03_seed_7] running -> experiments\B03\seed_7
+[B03_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B04_seed_7] running -> experiments\B04\seed_7
+[B04_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B05_seed_7] running -> experiments\B05\seed_7
+[B05_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B06_seed_7] running -> experiments\B06\seed_7
+[B06_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B07_seed_7] running -> experiments\B07\seed_7
+[B07_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P00_seed_7] running -> experiments\P00\seed_7
+[P00_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P01_seed_7] running -> experiments\P01\seed_7
+[P01_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P02_seed_7] running -> experiments\P02\seed_7
+[P02_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P03_seed_7] running -> experiments\P03\seed_7
+[P03_seed_7] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B00_seed_21] running -> experiments\B00\seed_21
+[B00_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B01_seed_21] running -> experiments\B01\seed_21
+[B01_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B02_seed_21] running -> experiments\B02\seed_21
+[B02_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B03_seed_21] running -> experiments\B03\seed_21
+[B03_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B04_seed_21] running -> experiments\B04\seed_21
+[B04_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B05_seed_21] running -> experiments\B05\seed_21
+[B05_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B06_seed_21] running -> experiments\B06\seed_21
+[B06_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[B07_seed_21] running -> experiments\B07\seed_21
+[B07_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P00_seed_21] running -> experiments\P00\seed_21
+[P00_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P01_seed_21] running -> experiments\P01\seed_21
+[P01_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P02_seed_21] running -> experiments\P02\seed_21
+[P02_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[P03_seed_21] running -> experiments\P03\seed_21
+[P03_seed_21] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[bundle] running -> deployment
+[bundle] FAILED: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Run: C:\Users\ShenYang\Downloads\Liangchengxin\AnomalyDetection\project\runs\hai_full_windows
+Status: INCOMPLETE; full acceptance: False
+(Anomaly) PS C:\Users\ShenYang\Downloads\Liangchengxin\AnomalyDetection\project> .\scripts\run_pipeline.bat --suite full --device cuda --physical-batch-size 128 --replay-physical-batch-size 48 --run-id hai_full_windows --export-bundle --resume --fail-fast
+[B00_seed_1] running -> experiments\B00\seed_1
+[B01_seed_1] running -> experiments\B01\seed_1
+[B02_seed_1] running -> experiments\B02\seed_1
+[B03_seed_1] running -> experiments\B03\seed_1
+[B04_seed_1] running -> experiments\B04\seed_1
+[B05_seed_1] running -> experiments\B05\seed_1
+[B06_seed_1] running -> experiments\B06\seed_1
+[B07_seed_1] running -> experiments\B07\seed_1
+[P00_seed_1] running -> experiments\P00\seed_1
+[P01_seed_1] running -> experiments\P01\seed_1
+[P02_seed_1] running -> experiments\P02\seed_1
+[P03_seed_1] running -> experiments\P03\seed_1
+[R01_seed_1] running -> experiments\R01\seed_1
+[R02_seed_1] running -> experiments\R02\seed_1
+[R03_seed_1] running -> experiments\R03\seed_1
+[R04_seed_1] running -> experiments\R04\seed_1
+[R05_seed_1] running -> experiments\R05\seed_1
+[N01_seed_1] running -> experiments\N01\seed_1
+[N02_seed_1] running -> experiments\N02\seed_1
+[N03_seed_1] running -> experiments\N03\seed_1
+[N04_seed_1] running -> experiments\N04\seed_1
+[N05_seed_1] running -> experiments\N05\seed_1
+[B00_seed_7] running -> experiments\B00\seed_7
+[B01_seed_7] running -> experiments\B01\seed_7
+[B02_seed_7] running -> experiments\B02\seed_7
+[B03_seed_7] running -> experiments\B03\seed_7
+[B04_seed_7] running -> experiments\B04\seed_7
+[B05_seed_7] running -> experiments\B05\seed_7
+[B06_seed_7] running -> experiments\B06\seed_7
+[B07_seed_7] running -> experiments\B07\seed_7
+[P00_seed_7] running -> experiments\P00\seed_7
+[P01_seed_7] running -> experiments\P01\seed_7
+[P02_seed_7] running -> experiments\P02\seed_7
+[P03_seed_7] running -> experiments\P03\seed_7
+[R01_seed_7] running -> experiments\R01\seed_7
+[R02_seed_7] running -> experiments\R02\seed_7
+[R03_seed_7] running -> experiments\R03\seed_7
+[R04_seed_7] running -> experiments\R04\seed_7
+[R05_seed_7] running -> experiments\R05\seed_7
+[N01_seed_7] running -> experiments\N01\seed_7
+[N02_seed_7] running -> experiments\N02\seed_7
+[N03_seed_7] running -> experiments\N03\seed_7
+[N04_seed_7] running -> experiments\N04\seed_7
+[N05_seed_7] running -> experiments\N05\seed_7
+[B00_seed_21] running -> experiments\B00\seed_21
+[B01_seed_21] running -> experiments\B01\seed_21
+[B02_seed_21] running -> experiments\B02\seed_21
+[B03_seed_21] running -> experiments\B03\seed_21
+[B04_seed_21] running -> experiments\B04\seed_21
+[B05_seed_21] running -> experiments\B05\seed_21
+[B06_seed_21] running -> experiments\B06\seed_21
+[B07_seed_21] running -> experiments\B07\seed_21
+[P00_seed_21] running -> experiments\P00\seed_21
+[P01_seed_21] running -> experiments\P01\seed_21
+[P02_seed_21] running -> experiments\P02\seed_21
+[P03_seed_21] running -> experiments\P03\seed_21
+[R01_seed_21] running -> experiments\R01\seed_21
+[R02_seed_21] running -> experiments\R02\seed_21
+[R03_seed_21] running -> experiments\R03\seed_21
+[R04_seed_21] running -> experiments\R04\seed_21
+[R05_seed_21] running -> experiments\R05\seed_21
+[N01_seed_21] running -> experiments\N01\seed_21
+[N02_seed_21] running -> experiments\N02\seed_21
+[N03_seed_21] running -> experiments\N03\seed_21
+[N04_seed_21] running -> experiments\N04\seed_21
+[N05_seed_21] running -> experiments\N05\seed_21
+[bundle] running -> deployment
+Application bundle: C:\Users\ShenYang\Downloads\Liangchengxin\AnomalyDetection\project\bundles\hai_full_windows_primary_5833393b
+Run: C:\Users\ShenYang\Downloads\Liangchengxin\AnomalyDetection\project\runs\hai_full_windows
+Status: SUCCEEDED; full acceptance: True
